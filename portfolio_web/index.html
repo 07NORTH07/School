@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Моє резюме</title>
-    <link rel="stylesheet" href="main.css">           <!-- Global reset & dark theme -->
-    <link rel="stylesheet" href="main-menu.css">      <!-- Sticky horizontal navigation bar -->
-    <link rel="stylesheet" href="html-example.css">   <!-- HTML code demo block styling -->
-    <link rel="stylesheet" href="page-container.css"> <!-- Two-column resume layout (sidebar + content) -->
+    <title>Моє резюме | Портфоліо проектів</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="main-menu.css">
+    <link rel="stylesheet" href="html-example.css">
+    <link rel="stylesheet" href="page-container.css">
 </head>
 <body>
     <header>
@@ -24,8 +24,7 @@
 
         <!-- MAIN CONTENT -->
         <main class="page-container" id="home">
-            <!-- Left Сolumn -->
-            <!-- Author Information -->
+            <!-- Left Column -->
             <aside class="left-side">
                 <div class="avatar">
                     <img src="png/pig.jpg" alt="Фото" class="image">
@@ -35,7 +34,6 @@
                     <h1>Andrii Rebizhenko</h1>
                     <p class="title">Game Developer</p>
                     
-                    <!-- Сontacts -->
                     <address class="contact">
                         <h2>Контакти</h2>
                         <p>+38 (068) 078-55-74</p>
@@ -64,7 +62,7 @@
                 </div>
             </aside>
             
-            <!-- Right column (main content) -->
+            <!-- Right column -->
             <div class="right-side">
                 <!-- Work Experience -->
                 <section class="section" id="experience">
@@ -152,14 +150,27 @@
                 
                 <!-- Portfolio -->
                 <section class="section" id="portfolio">
-                    <h2>Мої роботи</h2>
-                    <ol>
-                        <li>Game Development projects using Unity (C#) and Unreal Engine (C++)</li>
-                        <li>Web Development solutions and browser-based interfaces</li>
-                        <li>Telegram chatbots using Python for various automated tasks</li>
-                        <li>Database architecture with SQL and PostgreSQL</li>
-                        <li>Personal pet-projects to explore new software architectures</li>
-                    </ol>
+                    <h2>Мої веб-проекти</h2>
+                    <div class="projects-grid">
+                        <article class="project-card">
+                            <h3>ЛР№1: Перший веб-сайт</h3>
+                            <p>Перший досвід у веб-розробці: базова HTML/CSS сторінка.</p>
+                            <a href="https://07north07.github.io/School/first_web/main.html" class="project-link" target="_blank">Переглянути проект →</a>
+                        </article>
+
+                        <article class="project-card">
+                            <h3>ПР #2: Редагування CSS коду</h3>
+                            <p>У цьому проекті було два завдання: Lemon та Mriya. Потрібно було відредагувати CSS, щоб сторінки правильно відображалися на веб-сайті.</p>
+                            <a href="https://07north07.github.io/School/editing_css_code/lemon/index.html" class="project-link" target="_blank">Переглянути проект "Lemon" →</a>
+                            <a href="https://07north07.github.io/School/editing_css_code/mriya/cossacs.html" class="project-link" target="_blank">Переглянути проект "Mriya" →</a>
+                        </article>
+
+                        <article class="project-card">
+                            <h3>ПР #3: Редагування CSS</h3>
+                            <p>Робота з CSS: редагування style.css. Додано дві картки та налаштовано виведення 6 карток у два рядки.</p>
+                            <a href="https://07north07.github.io/School/pr3_project_task/index.html" class="project-link" target="_blank">Переглянути проект →</a>
+                        </article>
+                    </div>
                 </section>
                 
                 <!-- My interests -->
@@ -185,7 +196,7 @@
                     </div>
                 </section>
                 
-                <!-- Сontact Form -->
+                <!-- Contact Form -->
                 <section class="section" id="contacts">
                     <h2>Контактна форма</h2>
                     <p>Зв'яжіться зі мною для співпраці:</p>
@@ -199,7 +210,6 @@
         </main>
     </header>
 
-    <!-- HTML -->
     <footer class="html-example">
         <h2>Базова структура HTML-документа:</h2>
         <div class="code-screenshot">
