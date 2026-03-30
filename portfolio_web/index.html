@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Моє резюме</title>
+    <link rel="stylesheet" href="main.css">           <!-- Global reset & dark theme -->
+    <link rel="stylesheet" href="main-menu.css">      <!-- Sticky horizontal navigation bar -->
+    <link rel="stylesheet" href="html-example.css">   <!-- HTML code demo block styling -->
+    <link rel="stylesheet" href="page-container.css"> <!-- Two-column resume layout (sidebar + content) -->
+</head>
+<body>
+    <header>
+        <!-- Navigation Bar -->
+        <nav class="main-menu">
+            <ul>
+                <li><a href="#home">Головна</a></li>
+                <li><a href="#portfolio">Портфоліо</a></li>
+                <li><a href="#contacts">Контакти</a></li>
+                <li><a href="#education">Освіта</a></li>
+                <li><a href="#experience">Досвід</a></li>
+            </ul>
+        </nav>
+
+        <!-- MAIN CONTENT -->
+        <main class="page-container" id="home">
+            <!-- Left Сolumn -->
+            <!-- Author Information -->
+            <aside class="left-side">
+                <div class="avatar">
+                    <img src="png/pig.jpg" alt="Фото" class="image">
+                </div>
+                
+                <div class="personal-info">
+                    <h1>Andrii Rebizhenko</h1>
+                    <p class="title">Game Developer</p>
+                    
+                    <!-- Сontacts -->
+                    <address class="contact">
+                        <h2>Контакти</h2>
+                        <p>+38 (068) 078-55-74</p>
+                        <p>hexscript@gmail.com</p>
+                        <p>Миколаїв, Україна</p>
+                    </address>
+                    
+                    <section class="skills">
+                        <h2>Навички</h2>
+                        <ul>
+                            <li>C</li>
+                            <li>C#</li>
+                            <li>C++</li>
+                            <li>HTML/CSS</li>
+                            <li>JS</li>
+                            <li>SQL</li>
+                            <li>PGSQL</li>
+                        </ul>
+                    </section>
+                    
+                    <section class="languages">
+                        <h2>Мови</h2>
+                        <p>Українська - рідна</p>
+                        <p>Англійська - B1</p>
+                    </section>
+                </div>
+            </aside>
+            
+            <!-- Right column (main content) -->
+            <div class="right-side">
+                <!-- Work Experience -->
+                <section class="section" id="experience">
+                    <h2>Досвід роботи</h2>
+                    
+                    <article class="experience-item">
+                        <h3>Game Developer</h3>
+                        <p class="company">Все сам, Миколаїв</p>
+                        <p class="period">Pet-projects 2020 - 2026</p>
+                        <p>Розробка ігрової логіки, механік та візуальних рішень для проєктів на рушіях Unity та Unreal Engine.</p>
+                        
+                        <h4>Мої обов'язки:</h4>
+                        <ol>
+                            <li>Розробка бекенд-логіки</li>
+                            <li>Створення REST API</li>
+                            <li>Оптимізація коду</li>
+                            <li>Тестування програмного забезпечення</li>
+                        </ol>
+                    </article>
+                    
+                    <article class="experience-item">
+                        <h3>Веб-розробник</h3>
+                        <p class="company">SoftServe, Київ</p>
+                        <p class="period">2019 - 2021</p>
+                        <p>Розробка програмного забезпечення; створення систем автоматичної перевірки програмного забезпечення; створення, супровід і тестування веб-ресурсів.</p>
+                        
+                        <h4>Технології, які використовував:</h4>
+                        <ul>
+                            <li>HTML5/CSS3</li>
+                            <li>JavaScript/TypeScript</li>
+                            <li>React.js</li>
+                            <li>Node.js</li>
+                            <li>MongoDB</li>
+                        </ul>
+                    </article>
+                    
+                    <article class="experience-item">
+                        <h3>Апаратне та Програмне забезпечення</h3>
+                        <p class="company">Все сам, Миколаїв</p>
+                        <p class="period">2020 - 2025</p>
+                        <p>Технічна підтримка, збірка комп'ютерних систем та розробка програмних рішень для власних потреб і невеликих проєктів.</p>
+                    </article>
+                </section>
+                
+                <!-- Education -->
+                <section class="section" id="education">
+                    <h2>Освіта і кваліфікації</h2>
+                    
+                    <article class="education-item">
+                        <h3>Бакалавр</h3>
+                        <p class="institution">Фаховий коледж електронних приладів ІФНТУНГ</p>
+                        <p class="period">2024 - 2026</p>
+                        <p>Спеціальність "121 Інженерія програмного забезпечення"</p>
+                    </article>
+                </section>
+                
+                <!-- Courses -->
+                <section class="section">
+                    <h2>Курси</h2>
+                    
+                    <article class="course-item">
+                        <h3>Тест-драйв Game Development</h3>
+                        <p class="institution">Test drive of the Isaev's Workshop</p>
+                        <p class="period">2020</p>
+                    </article>
+
+                    <article class="course-item">
+                        <h3>Вступний курс Fullstack</h3>
+                        <p class="institution">Онлайн курс GoIT Academy (Київ)</p>
+                        <p class="period">2022</p>
+                    </article>
+
+                    <article class="course-item">
+                        <h3>Англійська для IT</h3>
+                        <p class="institution">Мовна школа Speak Up (Київ)</p>
+                        <p class="period">2023</p>
+                    </article>
+                    
+                    <article class="course-item">
+                        <h3>Програмування на мові C#</h3>
+                        <p class="institution">C# Programming Course SimpleCode</p>
+                        <p class="period">2025</p>
+                    </article>
+                </section>
+                
+                <!-- Portfolio -->
+                <section class="section" id="portfolio">
+                    <h2>Мої роботи</h2>
+                    <ol>
+                        <li>Game Development projects using Unity (C#) and Unreal Engine (C++)</li>
+                        <li>Web Development solutions and browser-based interfaces</li>
+                        <li>Telegram chatbots using Python for various automated tasks</li>
+                        <li>Database architecture with SQL and PostgreSQL</li>
+                        <li>Personal pet-projects to explore new software architectures</li>
+                    </ol>
+                </section>
+                
+                <!-- My interests -->
+                <section class="section" id="interests">
+                    <h2>Мої інтереси</h2>
+                    
+                    <div class="interests-item">
+                        <div class="interests-category">Програмування</div>
+                        <ul class="interests-list">
+                            <li>Web Development</li>
+                            <li>Game Development</li>
+                            <li>Artificial Intelligence</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="interests-item">
+                        <div class="interests-category">Технології</div>
+                        <ul class="interests-list">
+                            <li>PC Building</li>
+                            <li>Tech Exploration</li>
+                            <li>Cyber Security</li>
+                        </ul>
+                    </div>
+                </section>
+                
+                <!-- Сontact Form -->
+                <section class="section" id="contacts">
+                    <h2>Контактна форма</h2>
+                    <p>Зв'яжіться зі мною для співпраці:</p>
+                    <ul>
+                        <li>Email: <a href="mailto:hexscript@gmail.com">hexscript@gmail.com</a></li>
+                        <li>Телефон: <a href="tel:+380680785574">+38 (068) 078-55-74</a></li>
+                        <li>GitHub: <a href="https://github.com/07NORTH07?tab=repositories">Посилання на репозиторії</a></li>
+                    </ul>
+                </section>
+            </div>
+        </main>
+    </header>
+
+    <!-- HTML -->
+    <footer class="html-example">
+        <h2>Базова структура HTML-документа:</h2>
+        <div class="code-screenshot">
+            <figure>
+                <img src="png/html.png" alt="Базова структура HTML документа" class="code-image">
+            </figure>
+        </div>
+    </footer>
+</body>
+</html>

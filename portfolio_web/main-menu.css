@@ -1,0 +1,39 @@
+/* ============================================
+   ГОРИЗОНТАЛЬНЕ МЕНЮ
+   ============================================ */
+.main-menu {
+    background-color: #1e1e1e;
+    padding: 18px 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #333;
+}
+
+.main-menu ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.main-menu a {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 6px;
+    letter-spacing: 0.5px;
+    border: 1px solid transparent;
+}
+
+.main-menu a:hover {
+    background-color: #2d2d2d;
+    color: #ffffff;
+    border-color: #444;
+}

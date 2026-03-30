@@ -1,0 +1,39 @@
+/* ============================================
+   HTML ПРИКЛАД З ЗОБРАЖЕННЯМ
+   ============================================ */
+.html-example {
+    max-width: 980px;
+    margin: 30px auto;
+    background-color: #1a1a1a;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    border: 1px solid #333;
+}
+
+.html-example h2 {
+    color: #d4d4d4;
+    margin-bottom: 25px;
+    text-align: center;
+    font-size: 26px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #444;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.code-screenshot {
+    background-color: #2d2d2d;
+    border-radius: 10px;
+    padding: 20px;
+    border: 1px solid #3a3a3a;
+}
+
+.code-image {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 8px;
+    border: 2px solid #444;
+}

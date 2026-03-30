@@ -1,0 +1,56 @@
+/* background */
+body {
+    margin: 0;
+    min-height: 100vh;
+    background-color: #1a1f21; /* самый темный слой */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+
+/* main рамка */
+.admin_main {
+    background-color: #212a2c; /* промежуточный слой */
+    padding: 25px;
+    border-radius: 14px;
+    width: 450px;
+    color: #64a1ad;           /* этот цвет применится ко всему тексту внутри */
+}
+
+/* title */
+.admin_main h1 {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #64a1ad;
+}
+
+/* info text */
+.admin_main ul {
+    list-style-type: square;
+    padding-left: 20px;
+    margin-bottom: 15px;
+}
+
+/* back to main setting */
+.admin_main p {
+    margin: 10px 0;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* png */
+.admin_main img {
+    display: block;
+    margin: 0 auto 15px auto;
+    border-radius: 6px;
+}
+
+/* link */
+.admin_main a {
+    color: #64a1ad;
+    text-decoration: underline;
+    font-size: 14px;
+}
