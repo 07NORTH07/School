@@ -1,0 +1,74 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 40px 20px;
+    background: lightgray;
+}
+
+h2 {
+    margin: 70px 0 35px 0;
+}
+
+/* Target circle container - common styles for all three examples */
+.target {
+    width: 200px;
+    height: 200px;
+    margin: 40px auto;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+    font-weight: bold;
+    color: black;
+    position: relative;
+    box-sizing: border-box;
+}
+
+/* 1. Using border + box-shadow */
+.target1 {
+    background: white;
+    border: 25px solid yellow;
+    box-shadow: 0 0 0 25px blue;
+}
+
+/* 2. Using radial-gradient */
+.target2 {
+    background: 
+        radial-gradient(
+            circle,
+            white 0% 33%,      /* white center */
+            yellow 33% 55.5%,   /* yellow ring */
+            blue 55.5% 100% /* blue outer ring */
+        );
+}
+
+/* 3. Using two pseudo-elements (::before + ::after) */
+.target3 {
+    background: blue;
+}
+
+/* Yellow ring created with ::before pseudo-element */
+.target3::before {
+    content: "";
+    position: absolute;
+    inset: 25px;
+    background: yellow;
+    border-radius: 50%;
+}
+
+/* White center with text "UA" created with ::after pseudo-element */
+.target3::after {
+    content: "UA";
+    position: absolute;
+    inset: 54px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+    font-weight: bold;
+    color: black;
+    z-index: 1;
+}
