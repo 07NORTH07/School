@@ -1,0 +1,25 @@
+.lined-title {
+    display: flex;
+    align-items: center; /* Vertical alignment */
+    text-align: center;
+    font-family: sans-serif;
+    color: #333;
+}
+
+/* Pseudo-elements for horizontal lines */
+.lined-title::before,
+.lined-title::after {
+    content: "";    /* Required to render */
+    flex: 1;        /* Stretch to fill available space */
+    height: 5px;    /* Line thickness */
+    background: black;
+}
+
+/* Spacing between text and lines */
+.lined-title::before {
+    margin-right: 10px;
+}
+
+.lined-title::after {
+    margin-left: 10px;
+}
