@@ -1,0 +1,4 @@
+.vscode/
+*.log
+.directory
+__pycahe__/
