@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 1 - Company</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="page-wrapper">
+
+    <!-- WAY 1 - using <table> element -->
+    <h2 class="section-title">Way 1 — &lt;table&gt;</h2>
+
+    <table class="tbl">
+      <thead>
+        <tr>
+          <th>Company</th>
+          <th>Q1</th>
+          <th>Q2</th>
+          <th>Q3</th>
+          <th>Q4</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- nth-child(odd) = light blue, nth-child(even) = white - set in CSS -->
+        <tr>
+          <td class="td-company">Microsoft</td>
+          <td>20.3</td>
+          <td>30.5</td>
+          <td>23.5</td>
+          <td>40.3</td>
+        </tr>
+        <tr>
+          <td class="td-company">Google</td>
+          <td>50.2</td>
+          <td>40.63</td>
+          <td>45.23</td>
+          <td>39.3</td>
+        </tr>
+        <tr>
+          <td class="td-company">Apple</td>
+          <td>25.4</td>
+          <td>30.2</td>
+          <td>33.3</td>
+          <td>36.7</td>
+        </tr>
+        <tr>
+          <td class="td-company">IBM</td>
+          <td>20.4</td>
+          <td>15.6</td>
+          <td>22.3</td>
+          <td>29.3</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- WAY 2 - using float property -->
+    <h2 class="section-title">Way 2 — float</h2>
+
+    <!-- 5 columns: each cell is 20% wide (100% / 5 = 20%) -->
+    <div class="ftable">
+
+      <!-- Header row -->
+      <div class="frow frow-head">
+        <div class="fcell">Company</div>
+        <div class="fcell">Q1</div>
+        <div class="fcell">Q2</div>
+        <div class="fcell">Q3</div>
+        <div class="fcell">Q4</div>
+      </div>
+
+      <div class="frow">
+        <div class="fcell fcell-company">Microsoft</div>
+        <div class="fcell">20.3</div>
+        <div class="fcell">30.5</div>
+        <div class="fcell">23.5</div>
+        <div class="fcell">40.3</div>
+      </div>
+      <div class="frow">
+        <div class="fcell fcell-company">Google</div>
+        <div class="fcell">50.2</div>
+        <div class="fcell">40.63</div>
+        <div class="fcell">45.23</div>
+        <div class="fcell">39.3</div>
+      </div>
+      <div class="frow">
+        <div class="fcell fcell-company">Apple</div>
+        <div class="fcell">25.4</div>
+        <div class="fcell">30.2</div>
+        <div class="fcell">33.3</div>
+        <div class="fcell">36.7</div>
+      </div>
+      <div class="frow">
+        <div class="fcell fcell-company">IBM</div>
+        <div class="fcell">20.4</div>
+        <div class="fcell">15.6</div>
+        <div class="fcell">22.3</div>
+        <div class="fcell">29.3</div>
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,130 @@
+/* Reset default browser margins and paddings for all elements */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* General page styles */
+body {
+  font-family: Arial, sans-serif;
+  background: #f2f2f2;
+  padding: 60px 20px;
+}
+
+/* Center container - limits width and centers content on the page */
+.page-wrapper {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+/* Container for the three plan tables
+   Clearfix - makes the parent see the height of floated children */
+.plans-container::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/*
+   Shared styles for all three plan tables
+   float: left + width: 33.3333% places
+   all three tables side by side in one row
+   (33.3333% * 3 = 100%)
+*/
+.plan {
+  float: left;
+  width: 33.3333%;
+  border-collapse: collapse;
+  background: #fff;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+/* Price row (€ 15/mo) inside the table header */
+.plan__price {
+  display: block;
+  padding: 28px 20px 4px;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff; /* White text - background color is set per plan below */
+}
+
+/* Plan name row (Tiny / Small / Medium) */
+.plan__name {
+  display: block;
+  padding: 4px 20px 24px;
+  font-size: 1rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.85);
+  letter-spacing: 2px;
+}
+
+/* Feature rows (Unlimited Email, Disk Space, etc.) */
+.plan tbody td {
+  padding: 12px 20px;
+  border-bottom: 1px solid #eee;
+  color: #888;
+  font-size: 0.88rem;
+}
+
+/* Bold text inside feature rows (Unlimited, Free, 50GB...) */
+.plan tbody td strong {
+  color: #444;
+}
+
+/* Dashed divider row between the feature list and the button */
+.plan__divider hr {
+  border: none;
+  border-top: 1px dashed #ccc;
+}
+/* Remove extra padding and bottom border from the divider row */
+.plan__divider {
+  padding: 8px 20px !important;
+  border-bottom: none !important;
+}
+
+/* Row containing the SIGN UP button */
+.plan__cta {
+  padding: 16px 20px 20px !important;
+  border-bottom: none !important;
+}
+
+/* Colored accent bar in the table footer (tfoot) */
+.plan tfoot td {
+  height: 6px;
+  padding: 0;
+  border: none;
+}
+
+/*
+   SIGN UP button - shared styles
+*/
+.btn {
+  display: inline-block;
+  padding: 10px 32px;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  text-decoration: none; /* Remove default link underline */
+  text-transform: uppercase;
+}
+
+/*
+   Color themes for each plan
+   Each plan has its own color: header, footer, button
+*/
+
+/* -- Tiny plan (teal) -- */
+.plan--teal thead    { background: #3dbda7; }
+.plan--teal tfoot td { background: #3dbda7; }
+.btn--teal { border: 2px solid #3dbda7; color: #3dbda7; }
+
+/* -- Small plan (amber) -- */
+.plan--amber thead    { background: #e6a817; }
+.plan--amber tfoot td { background: #e6a817; }
+.btn--amber { border: 2px solid #e6a817; color: #e6a817; }
+
+/* -- Medium plan (red) -- */
+.plan--red thead    { background: #c0392b; }
+.plan--red tfoot td { background: #c0392b; }
+.btn--red { border: 2px solid #c0392b; color: #c0392b; }

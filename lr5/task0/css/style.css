@@ -1,0 +1,87 @@
+/* Reset default browser margins and paddings for all elements */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* General page styles */
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  display: flex;
+  justify-content: center; /* Center the card horizontally */
+  padding: 40px 20px;
+}
+
+/* Outer card block — border and background */
+.card {
+  width: 260px;
+  border: 2px solid #e0e0e0;
+  border-bottom: 4px solid #2ecc71; /* Green accent line at the bottom */
+  background: #fff;
+}
+
+/* Top part of the card with the "Basic" title */
+.card__header {
+  padding: 28px 20px;
+  text-align: center;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+/* "Basic" text - large green heading */
+.card__title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2ecc71;
+}
+
+/* Price block - green background */
+.card__price {
+  background: #2ecc71;
+  text-align: center;
+  padding: 18px 20px;
+}
+
+/* Price text "$99" - white and large */
+.card__price span {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+/* Options list - remove default bullet markers */
+.card__options {
+  list-style: none;
+}
+
+/* Each option row */
+.card__options li {
+  text-align: center;
+  padding: 14px 20px;
+  font-size: 0.95rem;
+  color: #888;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+/* Every odd row gets a slightly grey background (alternating row colors) */
+.card__options li:nth-child(odd) {
+  background: #f9f9f9;
+}
+
+/* Bottom part of the card containing the button */
+.card__footer {
+  padding: 24px 20px;
+  text-align: center;
+  border-top: 1px solid #e0e0e0;
+}
+
+/* "Purchase" button - transparent with a green border */
+.card__btn {
+  display: inline-block;
+  padding: 10px 28px;
+  border: 2px solid #2ecc71;
+  color: #2ecc71;
+  font-size: 0.95rem;
+  text-decoration: none; /* Remove default link underline */
+}
