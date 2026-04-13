@@ -1,0 +1,254 @@
+  :root {
+      --teal: #6aabb0;
+      --teal-dark: #4e8f94;
+      --teal-bg: #7bbec3;
+      --text: #5a9ea4;
+      --btn-bg: #fff;
+      --btn-border: #6aabb0;
+      --radius: 12px;
+      --gap: 8px;
+  }
+
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+  }
+
+  body {
+      background: #f0f0f0;
+      font-family: Arial, sans-serif;
+  }
+
+  .page-center {
+      text-align: center;
+      padding: 30px 20px;
+  }
+
+  h2 {
+      margin-bottom: 16px;
+  }
+
+  .labels-row {
+      margin-bottom: 6px;
+  }
+
+  .variant-label {
+      display: inline-block;
+      width: 246px;
+      margin: 0 20px;
+      text-align: center;
+  }
+
+  /* ===================================================
+     CALCULATOR SHELL
+     Width: 246px
+     Border: 2px × 2 = 4px  -> inner = 242px
+     Padding: 14px × 2 = 28px -> content = 214px
+     4 btns + 3 gaps×8px: btn = (214-24)/4 = 47.5 -> 47px
+     Check: 4×47 + 3×8 = 188+24 = 212px
+  =================================================== */
+  .calc {
+      display: inline-block;
+      vertical-align: top;
+      margin: 0 20px;
+      width: 246px;
+      border: 2px solid var(--teal);
+      border-radius: var(--radius);
+      background: #fff;
+      padding-bottom: 14px;
+      overflow: hidden;
+  }
+
+  /* Header */
+  .calc-header {
+      background: var(--teal-bg);
+      color: #fff;
+      text-align: right;
+      padding: 8px 14px;
+      font-size: 13px;
+      letter-spacing: 1px;
+      border-radius: calc(var(--radius) - 2px) calc(var(--radius) - 2px) 0 0;
+  }
+
+  /* Display */
+  .calc-display {
+      padding: 10px 14px 0;
+  }
+
+  .calc-display input {
+      width: 100%;
+      border: 2px solid var(--teal);
+      border-radius: 6px;
+      padding: 6px 10px;
+      text-align: right;
+      font-size: 15px;
+      color: #555;
+      outline: none;
+      background: #fff;
+      font-family: Arial, sans-serif;
+  }
+
+  .calc-indicator {
+      height: 22px;
+      background: var(--teal-bg);
+      border-radius: 4px;
+      margin: 6px 0 0 auto;
+      width: 50%;
+  }
+
+  /* ===================================================
+     SHARED BUTTON STYLE
+  =================================================== */
+  .btn {
+      width: 47px;
+      height: 47px;
+      border: 2px solid var(--btn-border);
+      border-radius: 10px;
+      background: var(--btn-bg);
+      color: var(--text);
+      font-size: 15px;
+      cursor: pointer;
+      text-align: center;
+      line-height: 43px;
+      font-family: Arial, sans-serif;
+      transition: background .15s, color .15s;
+      user-select: none;
+  }
+
+  .btn:hover {
+      background: var(--teal);
+      color: #fff;
+  }
+
+  .btn:active {
+      background: var(--teal-dark);
+      color: #fff;
+      transform: scale(.95);
+  }
+
+  /* ===================================================
+     VARIANT 1 - FLOAT
+  =================================================== */
+  .v-float .calc-body {
+      padding: 10px 14px 0;
+  }
+
+  .v-float .btn-row {
+      overflow: hidden;
+      /* clearfix for floated buttons */
+      margin-bottom: var(--gap);
+  }
+
+  .v-float .btn-row:last-child {
+      margin-bottom: 0;
+  }
+
+  .v-float .btn {
+      float: left;
+      margin-right: var(--gap);
+      display: block;
+  }
+
+  .v-float .btn-row .btn:last-child {
+      margin-right: 0;
+  }
+
+  /* ===================================================
+     VARIANT 2 - POSITION
+     step = 47 + 8 = 55px
+  =================================================== */
+  .v-position .calc-body {
+      position: relative;
+      /* 4 rows: 4×47 + 3×8 = 212px */
+      height: 212px;
+      margin: 10px 14px 0;
+  }
+
+  .v-position .btn {
+      position: absolute;
+  }
+
+  /* Row 0 - top: 0 */
+  .v-position .r0c0 {
+      top: 0;
+      left: 0;
+  }
+
+  .v-position .r0c1 {
+      top: 0;
+      left: 55px;
+  }
+
+  .v-position .r0c2 {
+      top: 0;
+      left: 110px;
+  }
+
+  .v-position .r0c3 {
+      top: 0;
+      left: 165px;
+  }
+
+  /* Row 1 - top: 55 */
+  .v-position .r1c0 {
+      top: 55px;
+      left: 0;
+  }
+
+  .v-position .r1c1 {
+      top: 55px;
+      left: 55px;
+  }
+
+  .v-position .r1c2 {
+      top: 55px;
+      left: 110px;
+  }
+
+  .v-position .r1c3 {
+      top: 55px;
+      left: 165px;
+  }
+
+  /* Row 2 - top: 110 */
+  .v-position .r2c0 {
+      top: 110px;
+      left: 0;
+  }
+
+  .v-position .r2c1 {
+      top: 110px;
+      left: 55px;
+  }
+
+  .v-position .r2c2 {
+      top: 110px;
+      left: 110px;
+  }
+
+  .v-position .r2c3 {
+      top: 110px;
+      left: 165px;
+  }
+
+  /* Row 3 - top: 165 */
+  .v-position .r3c0 {
+      top: 165px;
+      left: 0;
+  }
+
+  .v-position .r3c1 {
+      top: 165px;
+      left: 55px;
+  }
+
+  .v-position .r3c2 {
+      top: 165px;
+      left: 110px;
+  }
+
+  .v-position .r3c3 {
+      top: 165px;
+      left: 165px;
+  }
