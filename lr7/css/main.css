@@ -1,0 +1,77 @@
+/* =============================================
+   MAIN.CSS — Core layout, variables, base styles
+   ============================================= */
+
+:root {
+  --bg-page:        #111111;
+  --bg-card:        #1c1c1c;
+  --bg-product:     #2a2a2a;
+  --bg-product-hover: #333333;
+  --border-card:    #2e2e2e;
+  --accent:         #e63a2a;
+  --accent-hover:   #ff4d3a;
+  --text-primary:   #ffffff;
+  --text-secondary: #9a9a9a;
+  --text-muted:     #5a5a5a;
+  --badge-disc:     #e63a2a;
+  --badge-avail:    #27ae60;
+  --badge-unavail:  #c0392b;
+  --radius-card:    10px;
+  --radius-product: 8px;
+  --radius-badge:   50%;
+  --font-display:   'Bebas Neue', sans-serif;
+  --font-ui:        'Barlow Condensed', sans-serif;
+  --font-body:      'Barlow', sans-serif;
+  --transition:     0.22s ease;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: 16px; scroll-behavior: smooth; }
+
+body {
+  background: var(--bg-page);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Main outer wrapper ── */
+.catalog-page {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* ── Page header ── */
+.page-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 8px;
+}
+
+.page-header__icon {
+  font-size: 2.2rem;
+  line-height: 1;
+}
+
+.page-header__title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  letter-spacing: 0.04em;
+  color: var(--text-primary);
+}
+
+.page-header__title span {
+  color: var(--accent);
+}
+
+/* ── Responsive ── */
+@media (max-width: 480px) {
+  .catalog-page { padding: 24px 14px 60px; gap: 20px; }
+}
