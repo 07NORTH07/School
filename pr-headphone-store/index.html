@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3legant — Headphone Store</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <div class="announcement-bar">
+    <span>30% off storewide — Limited time!</span>
+    <button class="announcement-close" aria-label="Close">✕</button>
+  </div>
+
+  <header class="header">
+    <button class="burger" id="burgerBtn" aria-label="Open menu" aria-expanded="false">
+      <span class="burger__line"></span>
+      <span class="burger__line"></span>
+      <span class="burger__line"></span>
+    </button>
+    <a href="#" class="logo">3legant<span class="logo__dot">.</span></a>
+
+    <nav class="desktop-nav" aria-label="Main navigation">
+      <a href="#" class="desktop-nav__link">Home</a>
+      <div class="desktop-nav__item">
+        <a href="#" class="desktop-nav__link desktop-nav__link--has-arrow">Shop
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </a>
+      </div>
+      <div class="desktop-nav__item">
+        <a href="#" class="desktop-nav__link desktop-nav__link--has-arrow">Product
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </a>
+      </div>
+      <a href="#" class="desktop-nav__link">Contact Us</a>
+    </nav>
+
+    <div class="header__icons">
+      <a href="#" class="icon-btn desktop-icon" aria-label="Search">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </a>
+      <a href="#" class="icon-btn desktop-icon" aria-label="Account">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      </a>
+      <a href="#" class="icon-btn" aria-label="Cart">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <span class="cart-badge">2</span>
+      </a>
+    </div>
+  </header>
+
+  <nav class="mobile-nav" id="mobileNav" aria-hidden="true">
+    <div class="mobile-nav__inner">
+      <div class="mobile-nav__logo">3legant<span class="logo__dot">.</span></div>
+      <ul class="mobile-nav__list">
+        <li class="mobile-nav__item">
+          <button class="mobile-nav__link mobile-nav__link--dropdown" data-target="drop-home">
+            Home
+            <svg class="drop-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <ul class="mobile-nav__dropdown" id="drop-home">
+            <li><a href="#">Main Page</a></li>
+            <li><a href="#">Featured</a></li>
+            <li><a href="#">Deals</a></li>
+          </ul>
+        </li>
+        <li class="mobile-nav__item">
+          <button class="mobile-nav__link mobile-nav__link--dropdown" data-target="drop-shop">
+            Shop
+            <svg class="drop-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <ul class="mobile-nav__dropdown" id="drop-shop">
+            <li><a href="#">Headbands</a></li>
+            <li><a href="#">Earbuds</a></li>
+            <li><a href="#">Accessories</a></li>
+            <li><a href="#">New Arrivals</a></li>
+          </ul>
+        </li>
+        <li class="mobile-nav__item">
+          <button class="mobile-nav__link mobile-nav__link--dropdown" data-target="drop-product">
+            Product
+            <svg class="drop-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <ul class="mobile-nav__dropdown" id="drop-product">
+            <li><a href="#">Best Sellers</a></li>
+            <li><a href="#">Reviews</a></li>
+            <li><a href="#">Compare</a></li>
+          </ul>
+        </li>
+        <li class="mobile-nav__item">
+          <a href="#" class="mobile-nav__link">Contact Us</a>
+        </li>
+      </ul>
+      <div class="mobile-nav__footer">
+        <a href="#" class="mobile-nav__cta">Shop Now →</a>
+        <div class="mobile-nav__socials">
+          <a href="#" aria-label="Instagram">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="#" aria-label="Facebook">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="#" aria-label="YouTube">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.96-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div class="nav-overlay" id="navOverlay"></div>
+
+  <main>
+
+    <section class="hero">
+      <picture class="hero__picture">
+        <source media="(min-width: 768px)" srcset="assets/img/png-pc/1-1.png" />
+        <img src="assets/img/png-mob/1-1.png" alt="Listen to the amazing music sound" class="hero__img" />
+      </picture>
+      <div class="hero__overlay">
+        <div class="hero__content">
+          <h1 class="hero__title">Listen to the <em>amazing</em> music sound.</h1>
+          <p class="hero__sub">Experience music like never before</p>
+          <a href="#" class="btn btn--dark">Shopping Now</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="brands">
+      <div class="brands__track">
+        <span class="brand-logo">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          logoipsum
+        </span>
+        <span class="brand-logo">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+          logoipsum
+        </span>
+        <span class="brand-logo">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+          logoipsum
+        </span>
+        <span class="brand-logo">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          logoipsum
+        </span>
+        <span class="brand-logo">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          logoipsum
+        </span>
+        <span class="brand-logo">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4"/></svg>
+          logoipsum
+        </span>
+      </div>
+    </section>
+
+    <section class="arrivals">
+      <div class="arrivals__header">
+        <h2 class="section-title">New Arrivals</h2>
+        <div class="arrivals__controls">
+          <button class="slider-btn slider-btn--prev" id="sliderPrev" aria-label="Previous">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+          </button>
+          <button class="slider-btn slider-btn--next" id="sliderNext" aria-label="Next">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+        </div>
+      </div>
+      <div class="arrivals__dots" id="sliderDots"></div>
+
+      <div class="slider__viewport" id="sliderViewport">
+        <div class="slider__track" id="sliderTrack">
+
+          <article class="product-card">
+            <div class="product-card__img-wrap">
+              <span class="product-card__badge">NEW</span>
+              <button class="product-card__wish" aria-label="Wishlist">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              </button>
+              <picture>
+                <source media="(min-width: 768px)" srcset="assets/img/png-pc/2-1.png" />
+                <img src="assets/img/png-mob/2-1.png" alt="Skullcandy Crusher ANC 2" class="product-card__img" />
+              </picture>
+            </div>
+            <div class="product-card__info">
+              <div class="product-card__stars">★★★★★</div>
+              <h3 class="product-card__name">Skullcandy - Crusher anc 2 wireless headphones</h3>
+              <p class="product-card__price">$299.99</p>
+            </div>
+            <button class="btn btn--dark btn--full">Add to cart</button>
+          </article>
+
+          <article class="product-card">
+            <div class="product-card__img-wrap">
+              <span class="product-card__badge">NEW</span>
+              <button class="product-card__wish" aria-label="Wishlist">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              </button>
+              <picture>
+                <source media="(min-width: 768px)" srcset="assets/img/png-pc/2-2.png" />
+                <img src="assets/img/png-mob/2-2.png" alt="Beats Studio Pro" class="product-card__img" />
+              </picture>
+            </div>
+            <div class="product-card__info">
+              <div class="product-card__stars">★★★★★</div>
+              <h3 class="product-card__name">Beats Studio Pro</h3>
+              <p class="product-card__price">$349.99</p>
+            </div>
+            <button class="btn btn--dark btn--full">Add to cart</button>
+          </article>
+
+          <article class="product-card">
+            <div class="product-card__img-wrap">
+              <span class="product-card__badge">NEW</span>
+              <button class="product-card__wish" aria-label="Wishlist">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              </button>
+              <picture>
+                <source media="(min-width: 768px)" srcset="assets/img/png-pc/2-3.png" />
+                <img src="assets/img/png-mob/2-3.png" alt="Sony WH-CH720N" class="product-card__img" />
+              </picture>
+            </div>
+            <div class="product-card__info">
+              <div class="product-card__stars">★★★★☆</div>
+              <h3 class="product-card__name">Sony WH-CH720N Wireless Noise Canceling</h3>
+              <p class="product-card__price">$149.99</p>
+            </div>
+            <button class="btn btn--dark btn--full">Add to cart</button>
+          </article>
+
+          <article class="product-card">
+            <div class="product-card__img-wrap">
+              <span class="product-card__badge">NEW</span>
+              <button class="product-card__wish" aria-label="Wishlist">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              </button>
+              <picture>
+                <source media="(min-width: 768px)" srcset="assets/img/png-pc/2-4.png" />
+                <img src="assets/img/png-mob/2-4.png" alt="Skullcandy Rail True Wireless" class="product-card__img" />
+              </picture>
+            </div>
+            <div class="product-card__info">
+              <div class="product-card__stars">★★★★★</div>
+              <h3 class="product-card__name">Skullcandy - Rail True Wireless Earbuds</h3>
+              <p class="product-card__price">$79.99</p>
+            </div>
+            <button class="btn btn--dark btn--full">Add to cart</button>
+          </article>
+
+          <article class="product-card">
+            <div class="product-card__img-wrap">
+              <span class="product-card__badge">NEW</span>
+              <button class="product-card__wish" aria-label="Wishlist">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              </button>
+              <picture>
+                <source media="(min-width: 768px)" srcset="assets/img/png-pc/2-5.png" />
+                <img src="assets/img/png-mob/2-5.png" alt="Beats Studio Pro" class="product-card__img" />
+              </picture>
+            </div>
+            <div class="product-card__info">
+              <div class="product-card__stars">★★★★★</div>
+              <h3 class="product-card__name">Beats Studio Pro</h3>
+              <p class="product-card__price">$224.99</p>
+            </div>
+            <button class="btn btn--dark btn--full">Add to cart</button>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="collection">
+      <h2 class="section-title">Shop Collection</h2>
+
+      <div class="collection__grid">
+        <div class="collection__item collection__item--featured">
+          <picture class="collection__picture">
+            <source media="(min-width: 768px)" srcset="assets/img/png-pc/3-1.png" />
+            <img src="assets/img/png-mob/3-1.png" alt="Headband Collection" class="collection__img" />
+          </picture>
+          <div class="collection__text">
+            <h3>Headband</h3>
+            <a href="#" class="collection__link">Collection →</a>
+          </div>
+        </div>
+
+        <div class="collection__item">
+          <picture class="collection__picture">
+            <source media="(min-width: 768px)" srcset="assets/img/png-pc/3-2.png" />
+            <img src="assets/img/png-mob/3-2.png" alt="Earbuds Collection" class="collection__img" />
+          </picture>
+          <div class="collection__text">
+            <h3>Earbuds</h3>
+            <a href="#" class="collection__link">Collection →</a>
+          </div>
+        </div>
+
+        <div class="collection__item">
+          <picture class="collection__picture">
+            <source media="(min-width: 768px)" srcset="assets/img/png-pc/3-3.png" />
+            <img src="assets/img/png-mob/3-3.png" alt="Accessories Collection" class="collection__img" />
+          </picture>
+          <div class="collection__text">
+            <h3>Accessories</h3>
+            <a href="#" class="collection__link">Collection →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bestseller">
+      <h2 class="section-title">Best Seller</h2>
+      <div class="bestseller__grid">
+
+        <article class="bs-card">
+          <div class="bs-card__img-wrap">
+            <span class="bs-card__badge">HOT</span>
+            <picture>
+              <source media="(min-width: 768px)" srcset="assets/img/png-pc/4-1.png" />
+              <img src="assets/img/png-mob/4-1.png" alt="Sony WH-1000XM5" class="bs-card__img" />
+            </picture>
+          </div>
+          <div class="bs-card__info">
+            <div class="bs-card__stars">★★★★★</div>
+            <h4>Sony — WH-1000XM5 Wireless Noise Canceling</h4>
+            <p>$299.99</p>
+          </div>
+        </article>
+
+        <article class="bs-card">
+          <div class="bs-card__img-wrap">
+            <span class="bs-card__badge">HOT</span>
+            <picture>
+              <source media="(min-width: 768px)" srcset="assets/img/png-pc/4-2.png" />
+              <img src="assets/img/png-mob/4-2.png" alt="Beats Studio Pro" class="bs-card__img" />
+            </picture>
+          </div>
+          <div class="bs-card__info">
+            <div class="bs-card__stars">★★★★★</div>
+            <h4>Beats Studio Pro</h4>
+            <p>$349.99</p>
+          </div>
+        </article>
+
+        <article class="bs-card">
+          <div class="bs-card__img-wrap">
+            <span class="bs-card__badge">HOT</span>
+            <picture>
+              <source media="(min-width: 768px)" srcset="assets/img/png-pc/4-3.png" />
+              <img src="assets/img/png-mob/4-3.png" alt="Sony WH-CH720N" class="bs-card__img" />
+            </picture>
+          </div>
+          <div class="bs-card__info">
+            <div class="bs-card__stars">★★★★★</div>
+            <h4>Sony — WH-CH72…</h4>
+            <p>$149.99</p>
+          </div>
+        </article>
+
+        <article class="bs-card">
+          <div class="bs-card__img-wrap">
+            <span class="bs-card__badge">HOT</span>
+            <picture>
+              <source media="(min-width: 768px)" srcset="assets/img/png-pc/4-4.png" />
+              <img src="assets/img/png-mob/4-4.png" alt="Skullcandy Rail" class="bs-card__img" />
+            </picture>
+          </div>
+          <div class="bs-card__info">
+            <div class="bs-card__stars">★★★★★</div>
+            <h4>Skullcandy — Rail…</h4>
+            <p>$79.99</p>
+          </div>
+        </article>
+
+        <article class="bs-card">
+          <div class="bs-card__img-wrap">
+            <span class="bs-card__badge">HOT</span>
+            <picture>
+              <source media="(min-width: 768px)" srcset="assets/img/png-pc/4-5.png" />
+              <img src="assets/img/png-mob/4-5.png" alt="Beats" class="bs-card__img" />
+            </picture>
+          </div>
+          <div class="bs-card__info">
+            <div class="bs-card__stars">★★★★★</div>
+            <h4>Beats…</h4>
+            <p>$249.99</p>
+          </div>
+        </article>
+
+        <article class="bs-card">
+          <div class="bs-card__img-wrap">
+            <span class="bs-card__badge">HOT</span>
+            <picture>
+              <source media="(min-width: 768px)" srcset="assets/img/png-pc/4-6.png" />
+              <img src="assets/img/png-mob/4-6.png" alt="JBL Reflect Flow" class="bs-card__img" />
+            </picture>
+          </div>
+          <div class="bs-card__info">
+            <div class="bs-card__stars">★★★★★</div>
+            <h4>JBL Reflect Flow…</h4>
+            <p>$179.95</p>
+          </div>
+        </article>
+
+        <article class="bs-card">
+          <div class="bs-card__img-wrap">
+            <span class="bs-card__badge">HOT</span>
+            <picture>
+              <source media="(min-width: 768px)" srcset="assets/img/png-pc/4-7.png" />
+              <img src="assets/img/png-mob/4-7.png" alt="Bose" class="bs-card__img" />
+            </picture>
+          </div>
+          <div class="bs-card__info">
+            <div class="bs-card__stars">★★★★★</div>
+            <h4>Bose…</h4>
+            <p>$349.00</p>
+          </div>
+        </article>
+
+        <article class="bs-card">
+          <div class="bs-card__img-wrap">
+            <span class="bs-card__badge">HOT</span>
+            <picture>
+              <source media="(min-width: 768px)" srcset="assets/img/png-pc/4-8.png" />
+              <img src="assets/img/png-mob/4-8.png" alt="AKG" class="bs-card__img" />
+            </picture>
+          </div>
+          <div class="bs-card__info">
+            <div class="bs-card__stars">★★★★★</div>
+            <h4>AKG…</h4>
+            <p>$349.99</p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="promo">
+      <div class="promo__img-wrap">
+        <picture>
+          <source media="(min-width: 768px)" srcset="assets/img/png-pc/5-1.png" />
+          <img src="assets/img/png-mob/5-1.png" alt="Hurry up 40% off" class="promo__img" />
+        </picture>
+      </div>
+      <div class="promo__text-block">
+        <span class="promo__label">PROMOTION</span>
+        <h2 class="promo__title">Hurry up! 40% OFF</h2>
+        <p class="promo__sub">Thousands of high tech are waiting for you</p>
+        <p class="promo__expires">Offer expires in:</p>
+        <div class="countdown" id="countdown">
+          <div class="countdown__unit"><span class="countdown__num" id="cd-days">02</span><span class="countdown__label">Days</span></div>
+          <div class="countdown__unit"><span class="countdown__num" id="cd-hours">12</span><span class="countdown__label">Hours</span></div>
+          <div class="countdown__unit"><span class="countdown__num" id="cd-mins">45</span><span class="countdown__label">Minutes</span></div>
+          <div class="countdown__unit"><span class="countdown__num" id="cd-secs">05</span><span class="countdown__label">Seconds</span></div>
+        </div>
+        <a href="#" class="btn btn--dark">Shop now</a>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="features__grid">
+        <div class="feature">
+          <div class="feature__icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 4v4h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          </div>
+          <h4>Free Shipping</h4>
+          <p>Order above $200</p>
+        </div>
+        <div class="feature">
+          <div class="feature__icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>
+          </div>
+          <h4>Money-back</h4>
+          <p>30 days guarantee</p>
+        </div>
+        <div class="feature">
+          <div class="feature__icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          </div>
+          <h4>Secure Payments</h4>
+          <p>Secured by Stripe</p>
+        </div>
+        <div class="feature">
+          <div class="feature__icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.99 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.92 1.1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <h4>24/7 Support</h4>
+          <p>Phone and Email support</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="instagram">
+      <div class="instagram__header">
+        <span class="instagram__label">NEWSFEED</span>
+        <h2 class="section-title">Instagram</h2>
+        <p>Follow us on social media for more discount &amp; promotions</p>
+        <a href="#" class="instagram__handle">@3legant_official</a>
+      </div>
+      <div class="instagram__grid">
+        <a href="#" class="instagram__item">
+          <picture>
+            <source media="(min-width: 768px)" srcset="assets/img/png-pc/6-1.png" />
+            <img src="assets/img/png-mob/6-1.png" alt="Instagram post 1" class="instagram__img" />
+          </picture>
+        </a>
+        <a href="#" class="instagram__item">
+          <picture>
+            <source media="(min-width: 768px)" srcset="assets/img/png-pc/6-2.png" />
+            <img src="assets/img/png-mob/6-2.png" alt="Instagram post 2" class="instagram__img" />
+          </picture>
+        </a>
+        <a href="#" class="instagram__item">
+          <picture>
+            <source media="(min-width: 768px)" srcset="assets/img/png-pc/6-3.png" />
+            <img src="assets/img/png-mob/6-3.png" alt="Instagram post 3" class="instagram__img" />
+          </picture>
+        </a>
+        <a href="#" class="instagram__item">
+          <picture>
+            <source media="(min-width: 768px)" srcset="assets/img/png-pc/6-4.png" />
+            <img src="assets/img/png-mob/6-4.png" alt="Instagram post 4" class="instagram__img" />
+          </picture>
+        </a>
+      </div>
+    </section>
+
+    <section class="newsletter">
+      <div class="newsletter__content">
+        <h2>Join Our Newsletter</h2>
+        <p>Sign up for deals, new products and promotions</p>
+        <div class="newsletter__form">
+          <label for="newsletter-email" class="sr-only">Email address</label>
+          <div class="newsletter__input-wrap">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <input type="email" id="newsletter-email" placeholder="Email address" />
+          </div>
+          <button class="newsletter__btn">Signup</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <div class="footer__logo">3legant<span class="logo__dot">.</span></div>
+        <span class="footer__divider">|</span>
+        <span class="footer__tagline">Headphone Store</span>
+      </div>
+      <nav class="footer__nav" aria-label="Footer navigation">
+        <a href="#">Home</a>
+        <a href="#">Shop</a>
+        <a href="#">Product</a>
+        <a href="#">Blog</a>
+        <a href="#">Contact Us</a>
+      </nav>
+      <div class="footer__socials">
+        <a href="#" aria-label="Instagram">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="#" aria-label="Facebook">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="#" aria-label="YouTube">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.96-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copy">Copyright © 2023 3legant. All rights reserved</p>
+      <div class="footer__legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+      </div>
+      <div class="footer__socials footer__socials--bottom">
+        <a href="#" aria-label="Instagram">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="#" aria-label="Facebook">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="#" aria-label="YouTube">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.96-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
