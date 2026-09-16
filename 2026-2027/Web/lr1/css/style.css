@@ -1,0 +1,50 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+section {
+  border: 1px solid #999;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+button {
+  padding: 5px 10px;
+  font-size: 14px;
+}
+
+#nameList {
+  list-style: none;
+  padding: 0;
+}
+
+#nameList li {
+  display: inline-block;
+  width: 25px;
+  text-align: center;
+  border: 1px solid #999;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+#output2 p {
+  margin: 3px 0;
+}
+
+#letters {
+  margin-top: 10px;
+}
+
+.letter-block {
+  display: inline-block;
+  width: 30px;
+  text-align: center;
+  border: 1px solid #999;
+  margin-right: 5px;
+  cursor: pointer;
+}
