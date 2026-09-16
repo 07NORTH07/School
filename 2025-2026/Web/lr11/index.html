@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kreativ — Sign Up</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Serif+Display&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- SVG FLAG SPRITE (hidden, referenced via <use>) -->
+  <div aria-hidden="true" style="display:none">
+    <object
+      id="flag-sprite-obj"
+      data="assets/icons/flags/flags-sprite.svg"
+      type="image/svg+xml"
+    ></object>
+  </div>
+
+  <svg xmlns="http://www.w3.org/2000/svg" class="svg-sprite" aria-hidden="true">
+    <defs>
+      <!-- Nigeria -->
+      <symbol id="flag-ng" viewBox="0 0 640 480">
+        <g fill-rule="evenodd" stroke-width="1pt">
+          <path fill="#fff" d="M0 0h640v480H0z"/>
+          <path fill="#008753" d="M426.6 0H640v480H426.6zM0 0h213.3v480H0z"/>
+        </g>
+      </symbol>
+      <!-- Ukraine -->
+      <symbol id="flag-ua" viewBox="0 0 640 480">
+        <path fill="#005bbb" d="M0 0h640v240H0z"/>
+        <path fill="#ffd500" d="M0 240h640v240H0z"/>
+      </symbol>
+      <!-- United States -->
+      <symbol id="flag-us" viewBox="0 0 640 480">
+        <rect width="640" height="480" fill="#bd3d44"/>
+        <path d="M0 55.4h640M0 110.8h640M0 166.1h640M0 221.5h640M0 276.9h640M0 332.3h640M0 387.6h640M0 443h640" stroke="#fff" stroke-width="37"/>
+        <rect width="364" height="258" fill="#192f5d"/>
+      </symbol>
+      <!-- United Kingdom -->
+      <symbol id="flag-gb" viewBox="0 0 640 480">
+        <path fill="#012169" d="M0 0h640v480H0z"/>
+        <path fill="#fff" d="m75 0 244 181L562 0h78v62L400 241l240 178v61h-80L320 301 81 480H0v-60l239-178L0 64V0z"/>
+        <path fill="#c8102e" d="m424 281 216 159v40L369 281zm-184 20 6 35L54 480H0zM640 0v3L391 191l2-44L590 0zM0 0l239 176h-60L0 42z"/>
+        <path fill="#fff" d="M241 0v480h160V0zM0 160v160h640V160z"/>
+        <path fill="#c8102e" d="M0 193v96h640v-96zM273 0v480h96V0z"/>
+      </symbol>
+      <!-- Germany -->
+      <symbol id="flag-de" viewBox="0 0 640 480">
+        <path fill="#fc0" d="M0 320h640v160H0z"/>
+        <path d="M0 0h640v160H0z"/>
+        <path fill="#f00" d="M0 160h640v160H0z"/>
+      </symbol>
+      <!-- France -->
+      <symbol id="flag-fr" viewBox="0 0 640 480">
+        <path fill="#fff" d="M213 0h214v480H213z"/>
+        <path fill="#002395" d="M0 0h213v480H0z"/>
+        <path fill="#ed2939" d="M427 0h213v480H427z"/>
+      </symbol>
+      <!-- Poland -->
+      <symbol id="flag-pl" viewBox="0 0 640 480">
+        <path fill="#fff" d="M0 0h640v480H0z"/>
+        <path fill="#dc143c" d="M0 240h640v240H0z"/>
+      </symbol>
+      <!-- Canada -->
+      <symbol id="flag-ca" viewBox="0 0 640 480">
+        <path fill="#ff0000" d="M0 0h153v480H0z"/>
+        <path fill="#fff" d="M153 0h334v480H153z"/>
+        <path fill="#ff0000" d="M487 0h153v480H487z"/>
+        <path fill="#ff0000" d="M320 80l-20 60H240l60 44-20 60 60-44 60 44-20-60 60-44h-60z"/>
+      </symbol>
+      <!-- Australia -->
+      <symbol id="flag-au" viewBox="0 0 640 480">
+        <path fill="#00008b" d="M0 0h640v480H0z"/>
+        <path fill="#fff" d="M0 0v27l74 53H0v53h640V80l-74-53H640V0zm604 0L320 240 36 0z"/>
+        <path fill="#c8102e" d="M0 0v13l111 77H0v27h244v-40L74 0zm640 0v13L529 90H640V63L529 0zM0 363v13l111 77H0v27h244v-40L74 363z"/>
+      </symbol>
+      <!-- Japan -->
+      <symbol id="flag-jp" viewBox="0 0 640 480">
+        <path fill="#fff" d="M0 0h640v480H0z"/>
+        <circle fill="#bc002d" cx="320" cy="240" r="143"/>
+      </symbol>
+      <!-- South Africa -->
+      <symbol id="flag-za" viewBox="0 0 640 480">
+        <path fill="#007a4d" d="M0 0h640v480H0z"/>
+        <path fill="#fff" d="M0 0l320 240L0 480z"/>
+        <path fill="#001489" d="M640 0H0l320 240z" transform="scale(1 .667)"/>
+        <path fill="#ffb612" d="M0 165l213 75-213 75z"/>
+        <path fill="#de3831" d="M640 0H224L0 240l224 240H640V0z"/>
+        <path fill="#fff" d="M640 24H240L37 240l203 216H640V24z"/>
+        <path fill="#007a4d" d="M640 70H265L80 240l185 170H640V70z"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <!-- PAGE WRAPPER -->
+  <div class="page-wrapper">
+
+    <!-- Success screen (hidden by default) -->
+    <div class="success-screen" id="success-screen" aria-live="polite">
+      <div class="success-card">
+        <div class="success-icon" aria-hidden="true">
+          <svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="26" cy="26" r="25" stroke="currentColor" stroke-width="2"/>
+            <path d="M14 26l9 9 15-15" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h2 class="success-title">Welcome to Kreativ!</h2>
+        <p class="success-body">Your account has been created successfully.<br>You can now start exploring.</p>
+        <a href="#" class="btn-home" onclick="showForm(event)">Back to Sign Up</a>
+      </div>
+    </div>
+
+    <!-- CARD  (two-column split layout) -->
+    <article class="card" id="main-card">
+
+      <!-- LEFT — Sign-up form -->
+      <section class="card__form-side">
+
+        <div class="logo" aria-label="Kreativ logo">Kreativ</div>
+        <h1 class="form-heading">Let's get you started</h1>
+
+        <form
+          class="signup-form"
+          id="signup-form"
+          action="#"
+          method="post"
+          novalidate
+        >
+
+          <!-- Full name -->
+          <div class="field" id="field-name">
+            <label class="field__label" for="full-name">Full name</label>
+            <input
+              class="field__input"
+              type="text"
+              id="full-name"
+              name="full-name"
+              placeholder="Ace Tiger"
+              autocomplete="name"
+            />
+            <span class="field__error" id="error-name" role="alert"></span>
+          </div>
+
+          <!-- Email -->
+          <div class="field" id="field-email">
+            <label class="field__label" for="email">Email address</label>
+            <input
+              class="field__input"
+              type="email"
+              id="email"
+              name="email"
+              placeholder="yourname@email.com"
+              autocomplete="email"
+            />
+            <span class="field__error" id="error-email" role="alert"></span>
+          </div>
+
+          <!-- Phone number with country selector -->
+          <div class="field" id="field-phone">
+            <label class="field__label" for="phone">Phone number</label>
+            <div class="phone-row">
+              <!-- Country picker -->
+              <div class="phone-country" id="phone-country">
+                <svg class="flag-icon" aria-hidden="true">
+                  <use href="#flag-ng" id="selected-flag"></use>
+                </svg>
+                <span class="phone-code" id="phone-code-display">+234</span>
+                <span class="select-arrow" aria-hidden="true">▾</span>
+
+                <!-- Dropdown -->
+                <ul class="country-dropdown" id="country-dropdown" role="listbox" aria-label="Select country code">
+                  <li class="country-option" data-code="+234" data-flag="flag-ng" role="option" tabindex="0">
+                    <svg class="flag-icon" aria-hidden="true"><use href="#flag-ng"></use></svg>
+                    <span>Nigeria</span><span class="code-label">+234</span>
+                  </li>
+                  <li class="country-option" data-code="+380" data-flag="flag-ua" role="option" tabindex="0">
+                    <svg class="flag-icon" aria-hidden="true"><use href="#flag-ua"></use></svg>
+                    <span>Ukraine</span><span class="code-label">+380</span>
+                  </li>
+                  <li class="country-option" data-code="+1" data-flag="flag-us" role="option" tabindex="0">
+                    <svg class="flag-icon" aria-hidden="true"><use href="#flag-us"></use></svg>
+                    <span>United States</span><span class="code-label">+1</span>
+                  </li>
+                  <li class="country-option" data-code="+44" data-flag="flag-gb" role="option" tabindex="0">
+                    <svg class="flag-icon" aria-hidden="true"><use href="#flag-gb"></use></svg>
+                    <span>United Kingdom</span><span class="code-label">+44</span>
+                  </li>
+                  <li class="country-option" data-code="+49" data-flag="flag-de" role="option" tabindex="0">
+                    <svg class="flag-icon" aria-hidden="true"><use href="#flag-de"></use></svg>
+                    <span>Germany</span><span class="code-label">+49</span>
+                  </li>
+                  <li class="country-option" data-code="+33" data-flag="flag-fr" role="option" tabindex="0">
+                    <svg class="flag-icon" aria-hidden="true"><use href="#flag-fr"></use></svg>
+                    <span>France</span><span class="code-label">+33</span>
+                  </li>
+                  <li class="country-option" data-code="+48" data-flag="flag-pl" role="option" tabindex="0">
+                    <svg class="flag-icon" aria-hidden="true"><use href="#flag-pl"></use></svg>
+                    <span>Poland</span><span class="code-label">+48</span>
+                  </li>
+                  <li class="country-option" data-code="+1" data-flag="flag-ca" role="option" tabindex="0">
+                    <svg class="flag-icon" aria-hidden="true"><use href="#flag-ca"></use></svg>
+                    <span>Canada</span><span class="code-label">+1</span>
+                  </li>
+                  <li class="country-option" data-code="+61" data-flag="flag-au" role="option" tabindex="0">
+                    <svg class="flag-icon" aria-hidden="true"><use href="#flag-au"></use></svg>
+                    <span>Australia</span><span class="code-label">+61</span>
+                  </li>
+                  <li class="country-option" data-code="+81" data-flag="flag-jp" role="option" tabindex="0">
+                    <svg class="flag-icon" aria-hidden="true"><use href="#flag-jp"></use></svg>
+                    <span>Japan</span><span class="code-label">+81</span>
+                  </li>
+                  <li class="country-option" data-code="+27" data-flag="flag-za" role="option" tabindex="0">
+                    <svg class="flag-icon" aria-hidden="true"><use href="#flag-za"></use></svg>
+                    <span>South Africa</span><span class="code-label">+27</span>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Number input -->
+              <input
+                class="field__input phone-number-input"
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="800 0000 0000"
+                autocomplete="tel"
+              />
+            </div>
+            <span class="field__error" id="error-phone" role="alert"></span>
+          </div>
+
+          <!-- Password -->
+          <div class="field" id="field-password">
+            <label class="field__label" for="password">Create password</label>
+            <div class="password-wrapper">
+              <input
+                class="field__input"
+                type="password"
+                id="password"
+                name="password"
+                placeholder="••••••••"
+                autocomplete="new-password"
+              />
+              <button
+                type="button"
+                class="password-toggle"
+                id="toggle-password"
+                aria-label="Show password"
+              >
+                <!-- Eye icon -->
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                  <circle cx="12" cy="12" r="3"/>
+                </svg>
+              </button>
+            </div>
+            <div class="password-hints">
+              <p id="hint-length" class="hint hint--neutral">Minimum 8 characters</p>
+              <p id="hint-symbol" class="hint hint--neutral">At least one symbol (e.g. @, !, #)</p>
+            </div>
+            <span class="field__error" id="error-password" role="alert"></span>
+          </div>
+
+          <!-- Location (Optional) -->
+          <div class="field" id="field-location">
+            <label class="field__label" for="location">
+              Location <span class="label-optional">(Optional)</span>
+            </label>
+            <div class="select-wrapper">
+              <select class="field__select" id="location" name="location">
+                <option value="" disabled selected>Select Location</option>
+                <option value="ng">Nigeria</option>
+                <option value="gh">Ghana</option>
+                <option value="ke">Kenya</option>
+                <option value="za">South Africa</option>
+                <option value="ua">Ukraine</option>
+                <option value="us">United States</option>
+                <option value="gb">United Kingdom</option>
+                <option value="de">Germany</option>
+                <option value="fr">France</option>
+                <option value="pl">Poland</option>
+                <option value="ca">Canada</option>
+                <option value="au">Australia</option>
+                <option value="jp">Japan</option>
+              </select>
+              <span class="select-arrow" aria-hidden="true">▾</span>
+            </div>
+          </div>
+
+          <!-- Submit -->
+          <button class="btn-signup" type="submit">Sign Up</button>
+
+          <!-- Login link -->
+          <p class="login-hint">
+            Already a user? <a href="#">Login</a>
+          </p>
+
+        </form>
+
+      </section>
+
+
+      <!-- RIGHT — Quote panel -->
+      <aside class="card__panel-side">
+
+        <nav class="panel-nav" aria-label="Site navigation">
+          <a href="#">Home</a>
+          <a href="#">Contact</a>
+        </nav>
+
+        <div class="panel-quote">
+          <blockquote>
+            "Creativity is intelligence having fun"
+          </blockquote>
+          <cite>— Albert Einstein</cite>
+        </div>
+
+      </aside>
+
+    </article>
+
+  </div>
+
+  <!-- JAVASCRIPT  — form validation + country picker -->
+  <script src="js/script.js"></script>
+
+</body>
+</html>

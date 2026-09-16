@@ -1,0 +1,559 @@
+/* ================================================
+   main.css — Mobile-First stylesheet
+   LR9 Landing Page
+   ================================================ */
+
+@import url('../assets/fonts/fonts.css');
+
+/* ================================================
+   1. CSS Custom Properties
+   ================================================ */
+
+:root {
+  /* Colors */
+  --color-primary:    #5bc0de;
+  --color-accent:     #e91e8c;
+  --color-text:       #333333;
+  --color-muted:      #888888;
+  --color-light:      #f8f8f8;
+  --color-white:      #ffffff;
+  --color-dark:       #3d4451;
+  --color-footer-bg:  #3d4451;
+  --color-border:     #eeeeee;
+
+  /* Typography */
+  --font-main:    'Raleway', sans-serif;
+  --fw-light:     300;
+  --fw-regular:   400;
+  --fw-medium:    500;
+  --fw-semi:      600;
+  --fw-bold:      700;
+
+  /* Spacing & layout */
+  --section-pad:  60px 0;
+  --container-w:  960px;
+  --radius:       30px;
+  --transition:   0.3s ease;
+
+  /* Burger */
+  --burger-size:  28px;
+  --burger-line:  2px;
+  --burger-gap:   6px;
+}
+
+/* ================================================
+   2. Reset & Base
+   ================================================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: var(--font-main);
+  font-weight: var(--fw-regular);
+  color: var(--color-text);
+  font-size: 14px;
+  line-height: 1.6;
+  background: var(--color-white);
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+/* ================================================
+   3. Layout Utilities
+   ================================================ */
+
+.container {
+  width: 100%;
+  max-width: var(--container-w);
+  margin-inline: auto;
+  padding-inline: 16px;
+}
+
+.section {
+  padding: var(--section-pad);
+}
+
+.section--gray {
+  background: var(--color-light);
+}
+
+/* ================================================
+   4. Typography Helpers
+   ================================================ */
+
+.section-title {
+  text-align: center;
+  font-size: 22px;
+  font-weight: var(--fw-light);
+  letter-spacing: 1px;
+  margin-bottom: 36px;
+  color: var(--color-text);
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: var(--color-primary);
+  margin: 12px auto 0;
+}
+
+/* ================================================
+   5. Buttons
+   ================================================ */
+
+.btn {
+  display: inline-block;
+  padding: 12px 32px;
+  border-radius: var(--radius);
+  font-family: var(--font-main);
+  font-weight: var(--fw-semi);
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
+  transition:
+    background var(--transition),
+    color var(--transition);
+}
+
+.btn--accent {
+  background: var(--color-accent);
+  color: var(--color-white);
+}
+
+.btn--accent:hover {
+  background: #c4166f;
+}
+
+.btn--outline {
+  background: transparent;
+  color: var(--color-white);
+  border: 2px solid var(--color-white);
+}
+
+.btn--outline:hover {
+  background: var(--color-white);
+  color: var(--color-dark);
+}
+
+/* ================================================
+   6. Navigation — Mobile-First
+   ================================================ */
+
+.nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 200;
+  padding: 16px 0;
+}
+
+.nav__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.nav__logo {
+  font-size: 18px;
+  font-weight: var(--fw-semi);
+  color: var(--color-primary);
+  letter-spacing: 0.5px;
+}
+
+/* --- Burger button --- */
+.nav__burger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: var(--burger-size);
+  height: calc(var(--burger-line) * 3 + var(--burger-gap) * 2);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.nav__burger span {
+  display: block;
+  width: 100%;
+  height: var(--burger-line);
+  background: var(--color-white);
+  border-radius: 2px;
+  transition: transform var(--transition), opacity var(--transition);
+  transform-origin: center;
+}
+
+/* Burger open state (×) */
+.nav__burger.is-open span:nth-child(1) {
+  transform: translateY(calc(var(--burger-gap) + var(--burger-line))) rotate(45deg);
+}
+
+.nav__burger.is-open span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.nav__burger.is-open span:nth-child(3) {
+  transform: translateY(calc(-1 * (var(--burger-gap) + var(--burger-line)))) rotate(-45deg);
+}
+
+/* --- Nav links panel --- */
+.nav__links {
+  display: none;
+  flex-direction: column;
+  gap: 0;
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 0;
+  right: 0;
+  background: var(--color-dark);
+  border-top: 2px solid var(--color-primary);
+  padding: 8px 0;
+}
+
+.nav__links.is-open {
+  display: flex;
+}
+
+.nav__links li {
+  width: 100%;
+}
+
+.nav__links a {
+  display: block;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: var(--fw-medium);
+  color: var(--color-white);
+  letter-spacing: 0.3px;
+  transition: color var(--transition), background var(--transition);
+}
+
+.nav__links a:hover {
+  color: var(--color-accent);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* ================================================
+   7. Hero — Mobile-First
+   ================================================ */
+
+.hero {
+  position: relative;
+  min-height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: url('../img/content/jumbotron.jpg') center / cover no-repeat;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(100, 130, 160, 0.35);
+}
+
+.hero__content {
+  position: relative;
+  z-index: 1;
+  padding: 80px 16px 48px;
+  width: 100%;
+}
+
+.hero__title {
+  font-size: 26px;
+  font-weight: var(--fw-light);
+  color: var(--color-white);
+  letter-spacing: 2px;
+  margin-bottom: 24px;
+}
+
+/* ================================================
+   8. Services Cards — Mobile-First
+   ================================================ */
+
+.services {
+  padding: var(--section-pad);
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+  text-align: center;
+}
+
+.card__icon {
+  color: var(--color-muted);
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: center;
+}
+
+.card__icon img {
+  width: 44px;
+  height: 44px;
+}
+
+.card__text {
+  font-size: 13px;
+  color: var(--color-muted);
+  line-height: 1.8;
+}
+
+/* ================================================
+   9. Blog — Mobile-First
+   ================================================ */
+
+.blog {
+  padding: var(--section-pad);
+}
+
+.blog-item {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.blog-item:first-child {
+  border-top: 1px solid var(--color-border);
+}
+
+.blog-item__img {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.blog-item__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.blog-item__title {
+  font-size: 17px;
+  font-weight: var(--fw-medium);
+  margin-bottom: 6px;
+  color: var(--color-text);
+}
+
+.blog-item__date {
+  font-size: 12px;
+  color: var(--color-primary);
+  margin-bottom: 8px;
+  font-weight: var(--fw-medium);
+}
+
+.blog-item__excerpt {
+  font-size: 13px;
+  color: var(--color-muted);
+  line-height: 1.8;
+}
+
+/* ================================================
+   10. Footer — Mobile-First
+   ================================================ */
+
+.footer {
+  background: var(--color-footer-bg);
+  color: var(--color-white);
+  text-align: center;
+  padding: 40px 0 24px;
+}
+
+.footer__logo {
+  font-size: 20px;
+  font-weight: var(--fw-light);
+  letter-spacing: 1px;
+  margin-bottom: 18px;
+  color: var(--color-white);
+}
+
+.footer__nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px 20px;
+  margin-bottom: 20px;
+}
+
+.footer__nav a {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.75);
+  font-weight: var(--fw-medium);
+  transition: color var(--transition);
+}
+
+.footer__nav a:hover {
+  color: var(--color-white);
+}
+
+.footer__copy {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* ================================================
+   11. Responsive Breakpoints (mobile-first)
+   ================================================
+   40em ≈ 640px  — tablet
+   60em ≈ 960px  — desktop
+   ================================================ */
+
+@media screen and (min-width: 40em) {
+  :root {
+    --section-pad: 80px 0;
+  }
+
+  .container {
+    padding-inline: 24px;
+  }
+
+  /* Navigation: burger hidden, links inline */
+  .nav__burger {
+    display: none;
+  }
+
+  .nav__links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 24px;
+    position: static;
+    background: transparent;
+    border: none;
+    padding: 0;
+  }
+
+  .nav--light .nav__links {
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .nav__links li {
+    width: auto;
+  }
+
+  .nav__links a {
+    padding: 0;
+  }
+
+  .nav--light .nav__links a {
+    color: var(--color-text);
+  }
+
+  /* Section title */
+  .section-title {
+    font-size: 26px;
+    margin-bottom: 44px;
+  }
+
+  /* Hero */
+  .hero {
+    min-height: 360px;
+  }
+
+  .hero__title {
+    font-size: 32px;
+  }
+
+  /* Services: 2-column */
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 36px;
+  }
+
+  /* Blog: horizontal layout */
+  .blog-item {
+    flex-direction: row;
+    gap: 24px;
+    padding: 28px 0;
+  }
+
+  .blog-item__img {
+    flex: 0 0 180px;
+    width: 180px;
+    height: 130px;
+  }
+
+  .blog-item__body {
+    flex: 1;
+  }
+}
+
+@media screen and (min-width: 60em) {
+  .nav {
+    padding: 20px 0;
+  }
+
+  .nav__links {
+    gap: 28px;
+  }
+
+  .section-title {
+    font-size: 28px;
+    margin-bottom: 50px;
+  }
+
+  .hero {
+    min-height: 400px;
+  }
+
+  .hero__content {
+    padding: 100px 20px 60px;
+  }
+
+  .hero__title {
+    font-size: 36px;
+  }
+
+  /* Services: 3-column */
+  .card-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+  }
+
+  .footer {
+    padding: 50px 0 30px;
+  }
+
+  .footer__nav {
+    gap: 24px;
+    margin-bottom: 24px;
+  }
+}

@@ -1,0 +1,131 @@
+/* Reset default browser margins and paddings for all elements */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* General page styles */
+body {
+  font-family: Arial, sans-serif;
+  background: #fff;
+  padding: 40px 20px;
+}
+
+/* Center container — limits width and centers content */
+.page-wrapper {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Section heading (Way 1, Way 2) */
+.section-title {
+  font-size: 1.1rem;
+  color: #333;
+  margin: 32px 0 12px 0;
+}
+
+/*
+   WAY 1 - layout using <table> element
+*/
+
+/* Main table - full width, no double borders */
+.tbl {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* "STUDENTS MARK SHEET" title - green background, spans all 6 columns */
+.th-title {
+  background: #70ad47;
+  color: #fff;
+  font-weight: 700;
+  padding: 10px 14px;
+  border: 1px solid #a9d08e;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+/* Sub-header cells (Name, Maths, Science...) — lighter green */
+.tbl thead tr:nth-child(2) th {
+  background: #a9d08e;
+  color: #fff;
+  font-weight: 700;
+  padding: 10px 14px;
+  border: 1px solid #a9d08e;
+  text-align: left;
+}
+
+/* Regular data cells */
+.tbl tbody td {
+  padding: 10px 14px;
+  border: 1px solid #c6e0b4;
+  color: #333;
+}
+
+/* Odd rows - white */
+.tbl tbody tr:nth-child(odd)  { background: #fff; }
+/* Even rows - light green */
+.tbl tbody tr:nth-child(even) { background: #e2efda; }
+
+/*
+   WAY 2 - layout using float property
+   Instead of <table><tr><td>
+*/
+
+/* Outer container of the float table */
+.ftable {
+  width: 100%;
+  border: 1px solid #c6e0b4;
+}
+
+/* Float row - clearfix so the parent sees the height of floated children */
+.frow::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Each cell - float: left puts all cells in one row
+   First 5 columns = 15% each, last column (General Knowledge) = 25%
+   Total: 15% * 5 + 25% = 100% */
+.fcell {
+  float: left;
+  width: 15%;
+  padding: 10px 14px;
+  border-right: 1px solid #c6e0b4;
+  border-bottom: 1px solid #c6e0b4;
+  color: #333;
+  font-size: 0.93rem;
+}
+
+/* Last cell in every row - wider to fit "General Knowledge", no right border */
+.frow .fcell:last-child {
+  width: 25%;
+  border-right: none;
+}
+
+/* Title row - full width, replaces colspan="6"
+   Override the 15% width set on .fcell */
+.frow-title .fcell-full {
+  float: left;
+  width: 100% !important;
+  background: #70ad47;
+  color: #fff;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 1px;
+  padding: 10px 14px;
+  border-right: none;
+}
+
+/* Header row cells (Name, Maths...) - lighter green */
+.frow-head .fcell {
+  background: #a9d08e;
+  color: #fff;
+  font-weight: 700;
+}
+
+/* Alternating row colors */
+.frow:nth-child(odd):not(.frow-head):not(.frow-title)  .fcell { background: #fff; }
+.frow:nth-child(even):not(.frow-head):not(.frow-title) .fcell { background: #e2efda; }

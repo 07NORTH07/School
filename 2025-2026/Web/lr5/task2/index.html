@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 2 - School marks</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="page-wrapper">
+
+    <!-- 1 - using <table> element -->
+    <h2 class="section-title">Way 1 — &lt;table&gt;</h2>
+
+    <table class="tbl">
+      <thead>
+        <!-- colspan="6" merges all 6 columns into one title row -->
+        <tr>
+          <th colspan="6" class="th-title">Students Mark Sheet</th>
+        </tr>
+        <tr>
+          <th>Name</th>
+          <th>Maths</th>
+          <th>Science</th>
+          <th>English</th>
+          <th>Physics</th>
+          <th>General Knowledge</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- nth-child(odd) = white, nth-child(even) = light green -->
+        <tr>
+          <td>David</td>
+          <td>85</td>
+          <td>87</td>
+          <td>88</td>
+          <td>92</td>
+          <td>88</td>
+        </tr>
+        <tr>
+          <td>Richard</td>
+          <td>91</td>
+          <td>81</td>
+          <td>78</td>
+          <td>71</td>
+          <td>74</td>
+        </tr>
+        <tr>
+          <td>John</td>
+          <td>81</td>
+          <td>86</td>
+          <td>88</td>
+          <td>84</td>
+          <td>92</td>
+        </tr>
+        <tr>
+          <td>Tony</td>
+          <td>84</td>
+          <td>86</td>
+          <td>87</td>
+          <td>82</td>
+          <td>81</td>
+        </tr>
+        <tr>
+          <td>Scott</td>
+          <td>71</td>
+          <td>79</td>
+          <td>82</td>
+          <td>88</td>
+          <td>89</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- 2 - using float property -->
+    <h2 class="section-title">Way 2 — float</h2>
+
+    <!-- 6 columns: each cell is 16.6666% -->
+    <div class="ftable">
+
+      <!-- Title row - full width, replaces colspan="6" -->
+      <div class="frow frow-title">
+        <div class="fcell fcell-full">Students Mark Sheet</div>
+      </div>
+
+      <!-- Header row -->
+      <div class="frow frow-head">
+        <div class="fcell">Name</div>
+        <div class="fcell">Maths</div>
+        <div class="fcell">Science</div>
+        <div class="fcell">English</div>
+        <div class="fcell">Physics</div>
+        <div class="fcell">General Knowledge</div>
+      </div>
+
+      <div class="frow">
+        <div class="fcell">David</div>
+        <div class="fcell">85</div>
+        <div class="fcell">87</div>
+        <div class="fcell">88</div>
+        <div class="fcell">92</div>
+        <div class="fcell">88</div>
+      </div>
+      <div class="frow">
+        <div class="fcell">Richard</div>
+        <div class="fcell">91</div>
+        <div class="fcell">81</div>
+        <div class="fcell">78</div>
+        <div class="fcell">71</div>
+        <div class="fcell">74</div>
+      </div>
+      <div class="frow">
+        <div class="fcell">John</div>
+        <div class="fcell">81</div>
+        <div class="fcell">86</div>
+        <div class="fcell">88</div>
+        <div class="fcell">84</div>
+        <div class="fcell">92</div>
+      </div>
+      <div class="frow">
+        <div class="fcell">Tony</div>
+        <div class="fcell">84</div>
+        <div class="fcell">86</div>
+        <div class="fcell">87</div>
+        <div class="fcell">82</div>
+        <div class="fcell">81</div>
+      </div>
+      <div class="frow">
+        <div class="fcell">Scott</div>
+        <div class="fcell">71</div>
+        <div class="fcell">79</div>
+        <div class="fcell">82</div>
+        <div class="fcell">88</div>
+        <div class="fcell">89</div>
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>

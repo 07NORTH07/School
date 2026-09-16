@@ -1,0 +1,330 @@
+/*================================
+  1. CSS Variables & Reset
+==================================*/
+
+@import url('../assets/fonts/fonts.css');
+
+:root {
+  --color-primary:    #5bc0de;
+  --color-accent:     #e91e8c;
+  --color-text:       #333333;
+  --color-muted:      #888888;
+  --color-light:      #f8f8f8;
+  --color-white:      #ffffff;
+  --color-dark:       #3d4451;
+  --color-footer-bg:  #3d4451;
+  --color-border:     #eeeeee;
+
+  --font-main:        'Raleway', sans-serif;
+
+  --fw-light:   300;
+  --fw-regular: 400;
+  --fw-medium:  500;
+  --fw-semi:    600;
+  --fw-bold:    700;
+
+  --section-pad: 80px 0;
+  --container-w: 960px;
+  --radius:      30px;
+  --transition:  0.3s ease;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-main);
+  font-weight: var(--fw-regular);
+  color: var(--color-text);
+  font-size: 14px;
+  line-height: 1.6;
+  background: var(--color-white);
+}
+
+img { max-width: 100%; display: block; }
+a   { text-decoration: none; color: inherit; }
+ul  { list-style: none; }
+
+/*================================
+  2. Layout Utilities
+==================================*/
+.container {
+  max-width: var(--container-w);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section { padding: var(--section-pad); }
+.section--gray { background: var(--color-light); }
+
+/*================================
+  3. Typography helpers
+=================================*/
+.section-title {
+  text-align: center;
+  font-size: 28px;
+  font-weight: var(--fw-light);
+  letter-spacing: 1px;
+  margin-bottom: 50px;
+  color: var(--color-text);
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: var(--color-primary);
+  margin: 14px auto 0;
+}
+
+/*================================
+  4. Reusable Components
+==================================*/
+
+/* --- Button --- */
+.btn {
+  display: inline-block;
+  padding: 14px 40px;
+  border-radius: var(--radius);
+  font-family: var(--font-main);
+  font-weight: var(--fw-semi);
+  font-size: 15px;
+  cursor: pointer;
+  border: none;
+  transition: background var(--transition), color var(--transition);
+}
+
+.btn--accent {
+  background: var(--color-accent);
+  color: var(--color-white);
+}
+
+.btn--accent:hover { background: #c4166f; }
+
+.btn--outline {
+  background: transparent;
+  color: var(--color-white);
+  border: 2px solid var(--color-white);
+}
+
+.btn--outline:hover {
+  background: var(--color-white);
+  color: var(--color-dark);
+}
+
+/* --- Service Card --- */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  text-align: center;
+}
+
+.card__icon {
+  font-size: 40px;
+  color: var(--color-muted);
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.card__icon img {
+  width: 44px;
+  height: 44px;
+  display: block;
+}
+
+.card__text {
+  font-size: 13px;
+  color: var(--color-muted);
+  line-height: 1.8;
+}
+
+/* --- Blog Item --- */
+.blog-item {
+  display: flex;
+  gap: 30px;
+  padding: 30px 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.blog-item:first-child { border-top: 1px solid var(--color-border); }
+
+.blog-item__img {
+  flex: 0 0 180px;
+  height: 130px;
+  overflow: hidden;
+}
+
+.blog-item__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.blog-item__body { flex: 1; }
+
+.blog-item__title {
+  font-size: 18px;
+  font-weight: var(--fw-medium);
+  margin-bottom: 6px;
+  color: var(--color-text);
+}
+
+.blog-item__date {
+  font-size: 12px;
+  color: var(--color-primary);
+  margin-bottom: 10px;
+  font-weight: var(--fw-medium);
+}
+
+.blog-item__excerpt {
+  font-size: 13px;
+  color: var(--color-muted);
+  line-height: 1.8;
+}
+
+/*================================
+  5. Navigation
+==================================*/
+.nav {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 20px 0;
+}
+
+.nav__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav__logo {
+  font-size: 20px;
+  font-weight: var(--fw-semi);
+  color: var(--color-primary);
+  letter-spacing: 0.5px;
+}
+
+.nav__links {
+  display: flex;
+  gap: 28px;
+}
+
+.nav__links a {
+  font-size: 14px;
+  font-weight: var(--fw-medium);
+  color: var(--color-white);
+  letter-spacing: 0.3px;
+  transition: color var(--transition);
+}
+
+.nav__links a:hover { color: var(--color-accent); }
+
+/* Nav on white background (for inner pages) */
+.nav--light { position: static; background: var(--color-white); padding: 18px 0; box-shadow: 0 1px 4px rgba(0,0,0,0.08); }
+.nav--light .nav__links a { color: var(--color-text); }
+.nav--light .nav__logo    { color: var(--color-primary); }
+
+/*================================
+  6. Hero / Jumbotron
+==================================*/
+.hero {
+  position: relative;
+  min-height: 380px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: url('../img/content/jumbotron.jpg') center/cover no-repeat;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(100, 130, 160, 0.35);
+}
+
+.hero__content {
+  position: relative;
+  z-index: 1;
+  padding: 100px 20px 60px;
+}
+
+.hero__title {
+  font-size: 36px;
+  font-weight: var(--fw-light);
+  color: var(--color-white);
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+}
+
+/*================================
+  7. Services Section
+==================================*/
+.services { padding: var(--section-pad); }
+
+/*================================
+  8. Blog Section
+==================================*/
+.blog { padding: var(--section-pad); }
+
+/*================================
+  9. Footer
+==================================*/
+.footer {
+  background: var(--color-footer-bg);
+  color: var(--color-white);
+  text-align: center;
+  padding: 50px 0 30px;
+}
+
+.footer__logo {
+  font-size: 22px;
+  font-weight: var(--fw-light);
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  color: var(--color-white);
+}
+
+.footer__nav {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.footer__nav a {
+  font-size: 13px;
+  color: rgba(255,255,255,0.75);
+  font-weight: var(--fw-medium);
+  transition: color var(--transition);
+}
+
+.footer__nav a:hover { color: var(--color-white); }
+
+.footer__copy {
+  font-size: 12px;
+  color: rgba(255,255,255,0.5);
+}
+
+/*================================
+  10. Responsive
+==================================*/
+@media (max-width: 768px) {
+  .card-grid { grid-template-columns: 1fr; gap: 30px; }
+  .blog-item { flex-direction: column; }
+  .blog-item__img { flex: none; width: 100%; height: 200px; }
+  .hero__title { font-size: 24px; }
+  .nav__links { gap: 16px; }
+}

@@ -1,0 +1,24 @@
+table {
+    border-collapse: collapse; /* removes gaps between cells */
+    border: 2px solid grey;
+    margin: 20px auto;
+}
+
+td {
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 40px; /* size of unicode chess pieces */
+}
+
+/* coloring logic */
+/* odd rows: 1st, 3rd, 5th, 7th cell is white, 2nd, 4th... is gray */
+tr:nth-child(odd) td:nth-child(even) {
+    background-color: darkgray;
+}
+
+/* even rows: 1st, 3rd, 5th, 7th cell is gray, 2nd, 4th... is white */
+tr:nth-child(even) td:nth-child(odd) {
+    background-color: darkgray;
+}

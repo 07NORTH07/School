@@ -1,0 +1,323 @@
+/* Page layout */
+body {
+    background-color: darkgrey;
+    margin: 0;
+    padding: 50px;
+    font-family: Arial, sans-serif;
+}
+
+.main-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 150px; /* space between sections */
+    padding-bottom: 50px;
+    border-bottom: 1px solid #eee;
+}
+
+h2 {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 60px; /* space between title and figure */
+}
+
+/* --- 20 FIGURES FROM PDF --- */
+
+/* 1. Circle */
+#circle {
+    width: 120px;
+    height: 120px;
+    background: #7fee1d;
+    -moz-border-radius: 60px;
+    -webkit-border-radius: 60px;
+    border-radius: 60px;
+}
+
+/* 2. Square */
+#square {
+    width: 120px;
+    height: 120px;
+    background: #f447ff;
+}
+
+/* 3. Rectangle */
+#rectangle {
+    width: 200px;
+    height: 100px;
+    background: #4da1f7;
+}
+
+/* 4. Oval */
+#oval {
+    width: 200px;
+    height: 100px;
+    background: #e9337c;
+    border-radius: 100px / 50px;
+}
+
+/* 5. Triangle Up */
+#triangle-up {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid #fcf921;
+}
+
+/* 6. Triangle Down */
+#triangle-down {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-top: 100px solid #20a3bf;
+}
+
+/* 7. Triangle Left */
+#triangle-left {
+    width: 0;
+    height: 0;
+    border-top: 50px solid transparent;
+    border-bottom: 50px solid transparent;
+    border-right: 100px solid lime;
+}
+
+/* 8. Triangle Right */
+#triangle-right {
+    width: 0;
+    height: 0;
+    border-top: 50px solid transparent;
+    border-bottom: 50px solid transparent;
+    border-left: 100px solid orange;
+}
+
+/* 9. Diamond */
+#diamond {
+    width: 80px;
+    height: 80px;
+    background: #1ef100;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+    margin-left: 60px;
+}
+
+/* 10. Trapezoid */
+#trapezoid {
+    border-bottom: 100px solid #e67e22;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    height: 0;
+    width: 100px;
+}
+
+/* 11. Parallelogram */
+#parallelogram {
+    width: 150px;
+    height: 100px;
+    background: #9b59b6;
+    transform: skew(20deg);
+}
+
+/* 12. Star 5-points */
+#star-five {
+   margin: 50px 0;
+   position: relative;
+   display: block;
+   color: #e9337c;
+   width: 0px;
+   height: 0px;
+   border-right:  100px solid transparent;
+   border-bottom: 70px  solid #e9337c;
+   border-left:   100px solid transparent;
+   transform: rotate(35deg);
+}
+#star-five:before {
+   border-bottom: 80px solid #e9337c;
+   border-left: 30px solid transparent;
+   border-right: 30px solid transparent;
+   position: absolute;
+   height: 0; width: 0;
+   top: -45px; left: -65px;
+   display: block;
+   content: '';
+   transform: rotate(-35deg);
+}
+#star-five:after {
+   position: absolute;
+   display: block;
+   color: #e9337c;
+   top: 3px; left: -105px;
+   width: 0px; height: 0px;
+   border-right: 100px solid transparent;
+   border-bottom: 70px solid #e9337c;
+   border-left: 100px solid transparent;
+   transform: rotate(-70deg);
+   content: '';
+}
+
+/* 13. Star 6-points */
+#star-six {
+    width: 0; height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid purple;
+    position: relative;
+}
+#star-six:after {
+    width: 0; height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-top: 100px solid purple;
+    position: absolute;
+    content: "";
+    top: 30px; left: -50px;
+}
+
+/* 14. Pentagon */
+#pentagon {
+    position: relative;
+    width: 54px;
+    /* bottom part of the pentagon */
+    border-width: 50px 18px 0;
+    border-style: solid;
+    border-color: #34495e transparent;
+}
+
+#pentagon:before {
+    content: "";
+    position: absolute;
+    height: 0;
+    width: 0;
+    /* move the top triangle down by 1px to overlap and hide the gap */
+    top: -84px; 
+    left: -18px;
+    border-width: 0 45px 35px;
+    border-style: solid;
+    border-color: transparent transparent #34495e;
+}
+
+/* Titles and spacing */
+h2 {
+    text-align: center;
+    width: 100%;
+    /* extra space between title and figure */
+    margin-bottom: 70px; 
+}
+
+/* 15. Hexagon */
+#hexagon {
+    width: 100px;
+    height: 55px;
+    background: #fc5e5e;
+    position: relative;
+    margin: 30px 0;
+}
+
+#hexagon:before {
+    content: "";
+    position: absolute;
+    /* moved down by 1px to overlap and hide the gap */
+    top: -24px; 
+    left: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 25px solid #fc5e5e;
+}
+
+#hexagon:after {
+    content: "";
+    position: absolute;
+    /* moved up by 1px to overlap and hide the gap */
+    bottom: -24px; 
+    left: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-top: 25px solid #fc5e5e;
+}
+
+/* 16. Octagon */
+#octagon {
+    width: 100px;
+    height: 100px;
+    background: purple;
+    clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+}
+
+/* 17. Heart */
+#heart {
+    position: relative;
+    width: 100px;
+    height: 90px;
+}
+#heart:before, #heart:after {
+    content: "";
+    position: absolute;
+    left: 50px; top: 0;
+    width: 50px; height: 80px;
+    background: #e74c3c;
+    border-radius: 50px 50px 0 0;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+}
+#heart:after {
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
+}
+
+/* 18. Infinity */
+#infinity {
+    position: relative;
+    width: 212px;
+    height: 100px;
+}
+#infinity:before, #infinity:after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 60px; height: 60px;
+    border: 20px solid #34495e;
+    border-radius: 50px 50px 0 50px;
+    transform: rotate(-45deg);
+}
+#infinity:after {
+    left: auto; right: 0;
+    border-radius: 50px 50px 50px 0;
+    transform: rotate(45deg);
+}
+
+/* 19. Comment Bubble */
+#comment-bubble {
+    width: 120px;
+    height: 80px;
+    background: #3498db;
+    position: relative;
+    border-radius: 10px;
+}
+#comment-bubble:after {
+    content: "";
+    position: absolute;
+    bottom: -20px; left: 50px;
+    border-width: 20px 20px 0;
+    border-style: solid;
+    border-color: #3498db transparent;
+}
+
+/* 20. Pacman */
+#pacman {
+  width: 0px;
+  height: 0px;
+  border-right: 60px solid transparent;
+  border-top: 60px solid #f1c40f;
+  border-left: 60px solid #f1c40f;
+  border-bottom: 60px solid #f1c40f;
+  border-top-left-radius: 60px;
+  border-top-right-radius: 60px;
+  border-bottom-left-radius: 60px;
+  border-bottom-right-radius: 60px;
+}

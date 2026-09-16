@@ -1,0 +1,188 @@
+/* =============================================
+   PRODUCT.CSS — Individual product card styles
+   ============================================= */
+
+/* ── Product card ── */
+.product-card {
+  background: var(--bg-product);
+  border-radius: var(--radius-product);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  scroll-snap-align: start;
+  flex-shrink: 0;
+  position: relative;
+  transition: background var(--transition), transform var(--transition);
+  cursor: pointer;
+}
+
+.product-card:hover {
+  background: var(--bg-product-hover);
+  transform: translateY(-2px);
+}
+
+/* ── Image area ── */
+.product-card__img-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: #222;
+}
+
+.product-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+.product-card:hover .product-card__img {
+  transform: scale(1.04);
+}
+
+/* ── Discount badge (top-left circle) ── */
+.product-card__badge {
+  position: absolute;
+  
+  overflow: hidden;
+
+  top: 10px;
+  left: 10px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--badge-disc);
+  color: #fff;
+  font-family: var(--font-ui);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+  box-shadow: 0 2px 8px rgba(230,58,42,0.45);
+  line-height: 1;
+  text-align: center;
+  /* Segmented / notched appearance using conic-gradient */
+  background:
+    conic-gradient(
+      transparent 0deg 30deg,
+      var(--badge-disc) 30deg 150deg,
+      transparent 150deg 180deg,
+      var(--badge-disc) 180deg 330deg,
+      transparent 330deg 360deg
+    );
+  /* Fallback solid inner circle */
+  box-shadow: 0 0 0 4px var(--badge-disc) inset, 0 2px 10px rgba(0,0,0,0.5);
+}
+
+/* Inner circle to mask conic rays and show text */
+.product-card__badge::after {
+  content: attr(data-discount);
+  position: absolute;
+  inset: 2px;
+  border-radius: 50%;
+  background: var(--badge-disc);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  background-clip: padding-box;
+  box-shadow: 0 0 0 2px var(--badge-disc);
+}
+
+/* ── Product info (below image) ── */
+.product-card__info {
+  padding: 10px 12px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.product-card__name {
+  font-family: var(--font-ui);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--text-primary);
+  line-height: 1.3;
+  text-transform: uppercase;
+  /* Clamp to 2 lines */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.product-card__price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 7px;
+  margin-top: 2px;
+}
+
+.product-card__price {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  color: var(--text-primary);
+  letter-spacing: 0.02em;
+}
+
+.product-card__price--old {
+  font-family: var(--font-ui);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  text-decoration: line-through;
+}
+
+.product-card__avail {
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 2px;
+}
+
+.product-card__avail::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.product-card__avail--yes {
+  color: var(--badge-avail);
+}
+.product-card__avail--yes::before {
+  background: var(--badge-avail);
+  box-shadow: 0 0 5px var(--badge-avail);
+}
+
+.product-card__avail--no {
+  color: var(--badge-unavail);
+}
+.product-card__avail--no::before {
+  background: var(--badge-unavail);
+}
+
+/* ── Responsive ── */
+@media (max-width: 540px) {
+  .product-card__badge { width: 36px; height: 36px; }
+  .product-card__info { padding: 8px 10px 10px; }
+  .product-card__name { font-size: 0.76rem; }
+  .product-card__price { font-size: 1rem; }
+}

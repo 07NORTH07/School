@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 4 - Casio 3234 Calculator</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <div class="page-center">
+    <h2>Task 4 - Casio 3234 &nbsp;|&nbsp; Два варіанти: float та position</h2>
+
+    <div class="labels-row">
+      <span class="variant-label">Варіант 1: float</span>
+      <span class="variant-label">Варіант 2: position</span>
+    </div>
+
+    <!-- VARIANT 1: FLOAT -->
+    <div class="calc v-float">
+      <div class="calc-header">Casio 3234</div>
+      <div class="calc-display">
+        <input type="text" value="лоррпапр" readonly>
+        <div class="calc-indicator"></div>
+      </div>
+      <div class="calc-body">
+        <div class="btn-row">
+          <button class="btn">7</button>
+          <button class="btn">8</button>
+          <button class="btn">9</button>
+          <button class="btn">+</button>
+        </div>
+        <div class="btn-row">
+          <button class="btn">4</button>
+          <button class="btn">5</button>
+          <button class="btn">6</button>
+          <button class="btn">-</button>
+        </div>
+        <div class="btn-row">
+          <button class="btn">1</button>
+          <button class="btn">2</button>
+          <button class="btn">3</button>
+          <button class="btn">/</button>
+        </div>
+        <div class="btn-row">
+          <button class="btn">，</button>
+          <button class="btn">0</button>
+          <button class="btn">=</button>
+          <button class="btn">*</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- VARIANT 2: POSITION -->
+    <div class="calc v-position">
+      <div class="calc-header">Casio 3234</div>
+      <div class="calc-display">
+        <input type="text" value="лоррпапр" readonly>
+        <div class="calc-indicator"></div>
+      </div>
+      <div class="calc-body">
+        <!-- Row 0 -->
+        <button class="btn r0c0">7</button>
+        <button class="btn r0c1">8</button>
+        <button class="btn r0c2">9</button>
+        <button class="btn r0c3">+</button>
+        <!-- Row 1 -->
+        <button class="btn r1c0">4</button>
+        <button class="btn r1c1">5</button>
+        <button class="btn r1c2">6</button>
+        <button class="btn r1c3">-</button>
+        <!-- Row 2 -->
+        <button class="btn r2c0">1</button>
+        <button class="btn r2c1">2</button>
+        <button class="btn r2c2">3</button>
+        <button class="btn r2c3">/</button>
+        <!-- Row 3 -->
+        <button class="btn r3c0">，</button>
+        <button class="btn r3c1">0</button>
+        <button class="btn r3c2">=</button>
+        <button class="btn r3c3">*</button>
+      </div>
+    </div>
+
+  </div>
+</body>
+
+</html>
