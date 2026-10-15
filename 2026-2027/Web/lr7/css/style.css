@@ -1,0 +1,74 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 40px 20px;
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+    color: #222;
+}
+
+.app {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 30px;
+    background: #fff;
+    border-radius: 10px;
+}
+
+h1 {
+    margin-top: 0;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    border: 0;
+    background: #222;
+    color: #fff;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #444;
+}
+
+#location,
+#distance {
+    margin-bottom: 8px;
+}
+
+#map {
+    height: 400px;
+    margin: 20px 0;
+    border-radius: 6px;
+}
+
+.fields {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 10px 0;
+}
+
+.fields label {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.fields input {
+    padding: 8px;
+}
+
+#dest-message {
+    min-height: 24px;
+    color: red;
+}
