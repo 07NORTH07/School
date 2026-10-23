@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ToDo List</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <header class="page-header">
+    <h1>ToDo List</h1>
+  </header>
+
+  <main class="app">
+    <form id="task-form" class="task-form" autocomplete="off">
+      <label for="task-input" class="visually-hidden">Нове завдання</label>
+      <input
+        id="task-input"
+        class="task-form__input"
+        type="text"
+        name="task"
+        placeholder="Додайте завдання"
+        maxlength="200"
+        required>
+    </form>
+
+    <section class="toolbar" aria-label="Фільтр і сортування">
+      <div class="filters" role="group" aria-label="Показати">
+        <button type="button" class="filters__btn" data-filter="all" aria-pressed="true">Усі</button>
+        <button type="button" class="filters__btn" data-filter="active" aria-pressed="false">Невиконані</button>
+        <button type="button" class="filters__btn" data-filter="done" aria-pressed="false">Виконані</button>
+      </div>
+
+      <div class="sort">
+        <label for="sort-select" class="sort__label">Сортування</label>
+        <select id="sort-select" class="sort__select">
+          <option value="newest">Спочатку нові</option>
+          <option value="oldest">Спочатку старі</option>
+          <option value="active-first">Спочатку невиконані</option>
+          <option value="done-first">Спочатку виконані</option>
+        </select>
+      </div>
+    </section>
+
+    <section aria-label="Список завдань">
+      <ul id="task-list" class="task-list"></ul>
+      <p id="empty-message" class="empty-message" hidden>Завдань немає. Введіть текст і натисніть Enter.</p>
+    </section>
+  </main>
+
+  <footer class="page-footer">
+    <p id="counter" class="counter" aria-live="polite"></p>
+  </footer>
+</body>
+</html>

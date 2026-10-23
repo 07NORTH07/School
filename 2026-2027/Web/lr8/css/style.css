@@ -1,0 +1,292 @@
+:root {
+  --color-text: #222;
+  --color-muted: #9a9a9a;
+  --color-border: #444;
+  --color-line: #ccc;
+  --color-danger: #d9232d;
+  --color-accent: #2a6fdb;
+  --color-bg: #fff;
+  --color-hover: #f6f6f6;
+  --font-main: Georgia, "Times New Roman", serif;
+  --font-ui: "Segoe UI", Roboto, Arial, sans-serif;
+  --width-app: 520px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 24px 16px 48px;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-main);
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ---------- Заголовок ---------- */
+.page-header {
+  text-align: center;
+}
+
+.page-header h1 {
+  margin: 0 0 20px;
+  font-size: 44px;
+  font-weight: 700;
+}
+
+/* ---------- Каркас додатку ---------- */
+.app {
+  max-width: var(--width-app);
+  margin: 0 auto;
+}
+
+/* ---------- Форма додавання ---------- */
+.task-form {
+  padding: 4px;
+  border: 1px solid var(--color-border);
+}
+
+.task-form__input {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid var(--color-border);
+  font: 15px var(--font-ui);
+  color: var(--color-text);
+}
+
+.task-form__input::placeholder {
+  color: var(--color-muted);
+}
+
+.task-form__input:focus {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 1px;
+}
+
+/* ---------- Фільтри та сортування ---------- */
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 16px;
+  padding: 10px 0;
+  font-family: var(--font-ui);
+  font-size: 14px;
+}
+
+.filters {
+  display: flex;
+  gap: 6px;
+}
+
+.filters__btn {
+  padding: 5px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font: inherit;
+  cursor: pointer;
+}
+
+.filters__btn:hover {
+  background: var(--color-hover);
+}
+
+.filters__btn[aria-pressed="true"] {
+  background: var(--color-text);
+  color: var(--color-bg);
+}
+
+.sort {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.sort__select {
+  padding: 4px 6px;
+  border: 1px solid var(--color-border);
+  background: var(--color-bg);
+  font: inherit;
+}
+
+.filters__btn:focus-visible,
+.sort__select:focus-visible,
+.task__delete:focus-visible,
+.task__restore:focus-visible,
+.task__check:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* ---------- Список завдань ---------- */
+.task-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border: 1px solid var(--color-border);
+  border-bottom: 0;
+}
+
+.task-list:empty {
+  display: none;
+}
+
+.task {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 48px;
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.task__check {
+  flex: none;
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  cursor: pointer;
+}
+
+/* місце під чекбокс, щоб текст не стрибав після виконання */
+.task__check-slot {
+  flex: none;
+  width: 16px;
+  height: 16px;
+}
+
+.task__body {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  cursor: text;
+  user-select: none;
+}
+
+.task__text {
+  overflow-wrap: anywhere;
+}
+
+.task__date {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  color: var(--color-muted);
+}
+
+.task__edit {
+  width: 100%;
+  padding: 4px 6px;
+  border: 1px solid var(--color-border);
+  font: inherit;
+  font-size: 16px;
+}
+
+.task__edit:focus {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 1px;
+}
+
+/* виконане завдання: перекреслене і сіре */
+.task--done .task__text {
+  text-decoration: line-through;
+  color: var(--color-muted);
+}
+
+.task--done .task__body {
+  cursor: default;
+}
+
+/* ---------- Кнопки в рядку ---------- */
+.task__delete {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 24px;
+  padding: 0;
+  border: 2px solid var(--color-danger);
+  border-radius: 12px;
+  background: var(--color-bg);
+  color: var(--color-danger);
+  font: 700 14px/1 var(--font-ui);
+  cursor: pointer;
+}
+
+.task__delete:hover {
+  background: var(--color-danger);
+  color: var(--color-bg);
+}
+
+.task__restore {
+  flex: none;
+  padding: 2px 8px;
+  border: 1px solid var(--color-line);
+  border-radius: 10px;
+  background: var(--color-bg);
+  color: var(--color-muted);
+  font: 12px var(--font-ui);
+  cursor: pointer;
+}
+
+.task__restore:hover {
+  border-color: var(--color-border);
+  color: var(--color-text);
+}
+
+/* ---------- Службові повідомлення ---------- */
+.empty-message {
+  margin: 24px 0 0;
+  text-align: center;
+  color: var(--color-muted);
+  font-family: var(--font-ui);
+  font-size: 15px;
+}
+
+.page-footer {
+  max-width: var(--width-app);
+  margin: 12px auto 0;
+}
+
+.counter {
+  margin: 0;
+  color: var(--color-muted);
+  font-family: var(--font-ui);
+  font-size: 13px;
+}
+
+/* ---------- Мобільні пристрої ---------- */
+@media (max-width: 480px) {
+  .page-header h1 {
+    font-size: 34px;
+  }
+
+  .toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .sort {
+    justify-content: space-between;
+  }
+}
