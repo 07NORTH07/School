@@ -8,14 +8,14 @@ const CART_KEY = 'football-cart';
 
 /* ---------- Товари ---------- */
 const products = [
-  { id: 1, category: 'М\'ячі',          name: 'Футбольний м\'яч',        price: 1299, image: 'img/ball.svg',        tag: 'Хіт' },
-  { id: 2, category: 'Взуття',          name: 'Бутси футбольні',         price: 2850, image: 'img/boots.svg',       tag: '' },
-  { id: 3, category: 'Форма',           name: 'Футболка гравця',         price: 899,  image: 'img/jersey.svg',      tag: 'Новинка' },
-  { id: 4, category: 'Воротарям',       name: 'Рукавички воротарські',   price: 749,  image: 'img/gloves.svg',      tag: '' },
-  { id: 5, category: 'Захист',          name: 'Щитки футбольні',         price: 349,  image: 'img/shinguards.svg',  tag: '' },
-  { id: 6, category: 'Форма',           name: 'Гетри',                   price: 189,  image: 'img/socks.svg',       tag: '' },
-  { id: 7, category: 'Уболівальникам',  name: 'Шарф уболівальника',      price: 299,  image: 'img/scarf.svg',       tag: 'Хіт' },
-  { id: 8, category: 'Аксесуари',       name: 'Свисток арбітра',         price: 129,  image: 'img/whistle.svg',     tag: '' },
+  { id: 1, category: 'М\'ячі',          name: 'Футбольний м\'яч',        price: 1299, image: 'img/ball.jpg',        tag: 'Хіт' },
+  { id: 2, category: 'Взуття',          name: 'Бутси футбольні',         price: 2850, image: 'img/boots.jpg',       tag: '' },
+  { id: 3, category: 'Форма',           name: 'Футболка гравця',         price: 899,  image: 'img/jersey.jpg',      tag: 'Новинка' },
+  { id: 4, category: 'Воротарям',       name: 'Рукавички воротарські',   price: 749,  image: 'img/gloves.jpg',      tag: '' },
+  { id: 5, category: 'Захист',          name: 'Щитки футбольні',         price: 349,  image: 'img/shinguards.jpg',  tag: '' },
+  { id: 6, category: 'Форма',           name: 'Гетри',                   price: 189,  image: 'img/socks.jpg',       tag: '' },
+  { id: 7, category: 'Уболівальникам',  name: 'Шарф уболівальника',      price: 299,  image: 'img/scarf.jpg',       tag: 'Хіт' },
+  { id: 8, category: 'Аксесуари',       name: 'Свисток арбітра',         price: 129,  image: 'img/whistle.jpg',     tag: '' },
 ];
 
 function findProduct(id) {
