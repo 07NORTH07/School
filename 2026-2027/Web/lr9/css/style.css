@@ -1,0 +1,103 @@
+:root {
+  --color-text: #222;
+  --color-muted: #9a9a9a;
+  --color-border: #444;
+  --color-danger: #d9232d;
+  --color-ok: #1e7a34;
+  --color-bg: #fff;
+  --font-main: Georgia, "Times New Roman", serif;
+  --font-ui: "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 24px 16px 48px;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-main);
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+.page-header {
+  text-align: center;
+}
+
+.page-header h1 {
+  margin: 0 0 20px;
+  font-size: 40px;
+}
+
+.app {
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+/* ---------- Завдання ---------- */
+.task {
+  margin-bottom: 12px;
+  padding: 10px 12px;
+  border: 1px solid var(--color-border);
+}
+
+.task h2 {
+  margin: 0 0 4px;
+  font-size: 20px;
+}
+
+.task p {
+  margin: 0 0 8px;
+  font-size: 15px;
+}
+
+.task input {
+  width: 80px;
+  padding: 5px 8px;
+  border: 1px solid var(--color-border);
+  font: 15px var(--font-ui);
+}
+
+.task button {
+  padding: 5px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  background: var(--color-bg);
+  font: 14px var(--font-ui);
+  cursor: pointer;
+}
+
+.task button:hover {
+  background: var(--color-text);
+  color: var(--color-bg);
+}
+
+/* ---------- Лоадер і результат ---------- */
+#loader {
+  margin-top: 16px;
+  text-align: center;
+  color: var(--color-muted);
+  font-family: var(--font-ui);
+}
+
+#result {
+  margin-top: 16px;
+  padding: 10px 12px;
+  border: 1px solid var(--color-border);
+  font-family: var(--font-ui);
+  font-size: 16px;
+  min-height: 44px;
+}
+
+#result.ok {
+  color: var(--color-ok);
+}
+
+#result.error {
+  color: var(--color-danger);
+}
